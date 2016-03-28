@@ -1,0 +1,40 @@
+.post-min{
+    margin-top: 2px;
+    height: 450px;
+    border-bottom: solid;
+    border-bottom-color: #0f0f0f;
+    text-align: justify;
+}
+.post-max{
+    text-align: justify;
+}
+/*.navbar{*/
+    /*background-color: #428bca;*/
+/*}*/
+.navbar-brand {
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+}
+.navbar-brand {
+    padding: 0;
+}
+.navbar-brand>img {
+    height: 100%;
+    width: auto;
+    padding: 7px 14px;
+}
+.read-more{
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+}
+.btn {
+    border-radius: 0;
+}
+.post-title{
+    /*color: rgb(51, 122, 183);*/
+}
+.post-date{
+    /*color: #33B0B7;*/
+}
