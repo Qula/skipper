@@ -1,3 +1,8 @@
+<?php
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -30,7 +35,15 @@
                 <li><a href="" data-toggle="modal" data-target="#aboutModal">Info</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Logowanie</a></li>
+
+                    <?php if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+                        echo '<li><a href="login.php" >Zaloguj się</a></li>';
+                    }else{
+                        echo '<li><a href="admin-manager.php?command=tools">Panel</a> </li>';
+                        echo '<li><a href="user-manager.php?command=logout" >Wyloguj się</a></li>';
+                    }
+                    ?>
+
             </ul>
         </div>
     </div>
