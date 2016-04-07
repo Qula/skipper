@@ -11,7 +11,6 @@ include 'admin-header.php';
         <div class="col-md-4">
             <a class="btn btn-link" href="admin-manager.php?command=add">Dodaj</a>
             <button class="btn btn-link"  onclick="getPostList()">Edytuj</button>
-            <button class="btn btn-link" onclick="getPostListDelete()">Usuń</button>
         </div>
     </div>
     <br>

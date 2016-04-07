@@ -13,7 +13,7 @@ include 'admin-header.php';
             include('model.php');
             $id = $_GET['id'];
             $model = Model::getInstance();
-            $result = $model->getPost($id);
+            $result = $model->getEditPost($id);
             if(!empty($result['id'])){
             ?>
             <h5>Tytuł:</h5>
@@ -21,12 +21,16 @@ include 'admin-header.php';
             <h5>Tekst::</h5>
             <textarea id="tekst" class="form-control" rows="5" name="tekst" required><?php echo $result['text'] ?></textarea>
             <h5>Podaj obrazek:</h5>
-<!--            <textarea id="obraz" class="form-control" rows="1" name="obraz" required>--><?php //echo $result['image'] ?><!--</textarea>-->
-                <select name="obraz" class="pic-select">
-                    <option value="news" <?php echo $result['image']== 'pic/news.jpg' ? 'selected' : '' ?>>News</option>
-                    <option value="finish" <?php echo $result['image']== 'pic/finish.jpg' ? 'selected' : '' ?> >Regaty</option>
-                    <option value="slon" <?php echo $result['image']== 'pic/slon.jpg' ? 'selected' : '' ?>>slon</option>
-                </select>
+            <select name="obraz" class="pic-select">
+                <option value="news" <?php echo $result['image']== 'pic/news.jpg' ? 'selected' : '' ?>>News</option>
+                <option value="finish" <?php echo $result['image']== 'pic/finish.jpg' ? 'selected' : '' ?> >Regaty</option>
+                <option value="slon" <?php echo $result['image']== 'pic/slon.jpg' ? 'selected' : '' ?>>slon</option>
+            </select>
+            <h5>Wyświetlaj na głównej stronie:</h5>
+            <select name="widok" class="view-select">
+                <option value="0" <?php echo $result['deleted']== 0 ? 'selected' : '' ?>>Tak</option>
+                <option value="1" <?php echo $result['deleted']== 1 ? 'selected' : '' ?> >Nie</option>
+            </select>
 
             <?php }?>
             <button type="button" class="btn btn-primary pull-right" onclick="saveAsData(<?php echo $result['id'] ?>)">Wyślij</button>

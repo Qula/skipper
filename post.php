@@ -34,13 +34,13 @@
         }
 
         $model = Model::getInstance();
-        $result = $model->getRandomPosts();
+        $result = $model->getRandomPosts($id);
         ?>
         </div>
         <div class="col-md-4 col-sm-5">
             <?php foreach($result as $row){ ?>
             <div class="col-md-12 post-min">
-                <h2 class="post-title"><?php echo $row['id'] ?></h2>
+                <h2 class="post-title"><?php echo $row['title'] ?></h2>
                 <div class="post-date"><span class="glyphicon glyphicon glyphicon-calendar" aria-hidden="true"></span> <?php echo $row['date'] ?> / <?php echo $row['who'] ?></div>
                 <div><img class="img-responsive" src="<?php echo $row['image'] ?>"></div>
                 <div><?php echo $row['text'] ?></div>

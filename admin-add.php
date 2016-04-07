@@ -20,6 +20,11 @@ include 'admin-header.php';
                         <option value="finish">Regaty</option>
                         <option value="slon">slon</option>
                     </select>
+                    <h5>Wyswietlaj na głownej stronie:</h5>
+                    <select name="widok" class="view-select">
+                        <option value="0" selected>Tak</option>
+                        <option value="1">Nie</option>
+                    </select>
                     <button type="button" class="btn btn-primary pull-right" onclick="saveData()">Wyślij</button>
            </div>
     </div>

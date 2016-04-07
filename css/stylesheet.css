@@ -38,3 +38,6 @@
 .post-date{
     /*color: #33B0B7;*/
 }
+#delete-list li{
+    margin-top: 10px;
+}

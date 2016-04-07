@@ -6,11 +6,9 @@ $model = Model::getInstance();
 if($command == 'add') {
     header('Location: admin-add.php');
 }
-else if($command == 'delete'){
-    header('Location: admin-delete.php');
-}
 else if($command == 'edit'){
-    header('Location: admin-edit.php');
+    $id = $_GET['id'];
+    header('Location: admin-edit.php?id='.$id);
 }
 else if($command == 'tools'){
     header('Location: admin.php');
