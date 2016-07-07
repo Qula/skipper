@@ -11,12 +11,14 @@ session_start();
     <title>Aktualności</title>
 
     <link rel="stylesheet" href="bootstrap336/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/stylesheet.css">
+
 
 </head>
 <body>
 
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -25,14 +27,15 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#"><img src="http://skipper.com.pl/Logo.png" alt="Skipper Logo">
+            <a class="navbar-brand" href="user-interface.php"><img src="pic/logo.png" alt="Logo">
             </a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li class="active"><a href="user-interface.php">Strona główna</a></li>
-                <li><a href="" data-toggle="modal" data-target="#aboutModal">Info</a></li>
+                <li><a href="user-interface.php">Żaglarstwo</a></li>
+<!--                <li><a href="" data-toggle="modal" data-target="#aboutModal">Info</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
 

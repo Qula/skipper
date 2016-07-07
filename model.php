@@ -8,6 +8,7 @@ class Model
     private function __construct()
     {
         include 'db_config.php';
+
         $this->conn = new mysqli($dbHost, $dbUserName, $dbPassword, $dbName);
         if ($this->conn->connect_error) {
             die("Błąd połączenia z bazą");

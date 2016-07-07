@@ -10,7 +10,7 @@ if(!empty($_POST['action'])){
         $deleted = $_POST['deleted'];
         $ans = $model->saveData($title, $text, $img, $deleted);
         if($ans == 'success'){
-            echo json_encode(array("Zapisano post."));
+            echo json_encode(array("Zapisano wpis."));
         }else{
             echo json_encode(array("Wystąpił błąd."));
         }
@@ -23,7 +23,7 @@ if(!empty($_POST['action'])){
         $deleted = $_POST['deleted'];
         $ans = $model->saveAsData($title, $text, $img, $id, $deleted);
         if($ans == 'success'){
-            echo json_encode(array("Zapisano post."));
+            echo json_encode(array("Zapisano wpis."));
         }else{
             echo json_encode(array("Wystąpił błąd."));
         }

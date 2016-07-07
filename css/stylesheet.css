@@ -33,11 +33,53 @@
     border-radius: 0;
 }
 .post-title{
-    /*color: rgb(51, 122, 183);*/
+    color: rgb(51, 122, 183);
 }
 .post-date{
     /*color: #33B0B7;*/
 }
 #delete-list li{
     margin-top: 10px;
+}
+.head-desc {
+    padding: 0;
+    margin-bottom: 10px;
+    border-style: solid;
+    border-color: rgb(51, 122, 183); ;
+    min-height: 150px;
+    display: block;
+    /*background-image: url("../pic/about.jpg");*/
+}
+.head-desc > img {
+    margin: auto auto;
+    max-height: 90px;
+}
+.head-name {
+    text-align: center;
+    margin-top: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    background-color: rgb(51, 122, 183);
+    height: 50px;
+
+    /*background-color: red;*/
+}
+.head-name > p {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grey {
+    background-color: #F4F4F4;
+}
+
+.screen{
+    /*display: inline-flex;*/
+}
+
+#onas {
+    /*padding-left: 20px;*/
 }
