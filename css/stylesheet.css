@@ -76,6 +76,31 @@
     background-color: #F4F4F4;
 }
 
+
+.modal-content {
+    box-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+
+
+.custom-bullet li
+{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+hr {
+    color: rgb(51, 122, 183);
+    background-color: rgb(51, 122, 183);
+    height: 2px;
+}
+
+@media screen and (min-width: 768px) {
+    #terminale-line {
+        border-right: 1px solid rgb(51, 122, 183);
+    }
+}
 .screen{
     /*display: inline-flex;*/
 }

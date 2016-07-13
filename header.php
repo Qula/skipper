@@ -13,6 +13,7 @@ session_start();
     <link rel="stylesheet" href="bootstrap336/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 
 
 </head>
