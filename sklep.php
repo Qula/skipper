@@ -303,7 +303,7 @@
 
     <hr>
 
-    <p>Stopka</p>
+    <p> Stopka2</p>
 
 </div>
 
