@@ -110,8 +110,7 @@
     <hr>
     <h1 id="kasydrukarki">Kasy i drukarki</h1>
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" id="terminale-line">
-
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" >
 
         </div>
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
@@ -123,43 +122,91 @@
     <hr>
     <h1 id="serwis">Serwis</h1>
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" id="terminale-line">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+
+            <h4>Prowadzimy serwis komputerów i urządzeń fiskalnych:</h4>
+            <ul class="custom-bullet list-unstyled ">
+                <li><i class="glyphicon glyphicon-chevron-right"></i> komputerów stacjonarnych</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> laptopów</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> kas i drukarek fiskalnych</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> odzyskujemy dane</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> usuwamy szkodliwe oprogramowanie (wirusy, trojany, spam)</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> instalujemy oprogramowanie (windows, sterowniki, anty-virus, open office itp.)</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> budujemy i konfigurujemy sieci komputerowe</li>
+                <li> oraz wiele innych.</li>
+            </ul>
 
 
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                <img src="pic/serwis_info.jpg" class="img-responsive">
+            </div>
         </div>
     </div>
 
     <hr>
     <h1 id="oprogramowanie">Oprogramowanie</h1>
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" id="terminale-line">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+                <img src="pic/kaspersky.jpg" class="img-responsive">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+                <img src="pic/norton.jpg" class="img-responsive">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+                <img src="pic/aktyn.jpg" class="img-responsive">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+                <img src="pic/windows.jpg" class="img-responsive">
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                <img src="pic/office.jpg" class="img-responsive">
+            </div>
 
 
         </div>
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-
+            <h4>Zajmujemy się sprzedażą, instalacją oraz konfiguracją oprogramowania:</h4>
+            <ul class="custom-bullet list-unstyled ">
+                <li><i class="glyphicon glyphicon-chevron-right"></i> River (Aktyn)</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> Kaspersky Lab</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> Symantec (Norton)</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> Microsoft (Windows, Office)</li>
+                <li> oraz wiele innych.</li>
+            </ul>
         </div>
     </div>
 
     <hr>
     <h1 id="sprzetkomputerowy">Sprzęt komputerowy</h1>
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" id="terminale-line">
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 
-
+            <h4>Oferujemy szeroką gamę sprzętu komputerowego i akcesoriów:</h4>
+            <ul class="custom-bullet list-unstyled ">
+                <li><i class="glyphicon glyphicon-chevron-right"></i> komputery stacjonarne</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> laptopy</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> monitory</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> drukarki</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> urządzenia wielofunkcyjne</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> klawiatury, mysze komputerowe, słuchawki</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> materiały eksploatayjne (tusze, tonery)</li>
+                <li> oraz wiele innych.</li>
+            </ul>
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+                <img src="pic/sprzet.jpg" class="img-responsive">
+            </div>
         </div>
     </div>
 
     <hr>
     <h1 id="oprogramowaniedlafirm">Oprogramowanie dla firm</h1>
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" id="terminale-line">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" >
 
 
         </div>
@@ -172,7 +219,7 @@
     <hr>
     <h1 id="terminale">Terminale płatnicze</h1>
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" id="terminale-line">
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="terminale-line">
             <h4>Oferujemy terminale dwóch operatorów:</h4>
             <img src="pic/paytel_logo.jpg" class="img-responsive">
             <p class="text-center">oraz</p>
@@ -182,10 +229,10 @@
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
             <h4>Pozwalają na:</h4>
             <ul class="custom-bullet list-unstyled ">
-                <li><i class="glyphicon glyphicon-chevron-right"></i>Sprzedaż i dystrybucję doładowań do przedpłacanych kont sieci GSM poprzez terminale (w trybie off-line) oraz Internet</li>
-                <li><i class="glyphicon glyphicon-chevron-right"></i>Sprzedaż produktów operatorów telekomunikacyjnych VoIP</li>
-                <li><i class="glyphicon glyphicon-chevron-right"></i>Obsługę płatności masowych (rachunki za telefon, wodę, prąd, gaz itp.)</li>
-                <li><i class="glyphicon glyphicon-chevron-right"></i>Obsługę kartowych transakcji płatniczych (VISA, VISA ELECTRON, MasterCard, MasterCard Electronic, Maestro)</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż i dystrybucję doładowań do przedpłacanych kont sieci GSM poprzez terminale (w trybie off-line) oraz Internet</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż produktów operatorów telekomunikacyjnych VoIP</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> Obsługę płatności masowych (rachunki za telefon, wodę, prąd, gaz itp.)</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> Obsługę kartowych transakcji płatniczych (VISA, VISA ELECTRON, MasterCard, MasterCard Electronic, Maestro)</li>
             </ul>
         </div>
     </div>

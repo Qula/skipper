@@ -35,7 +35,7 @@ session_start();
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li class="active"><a href="user-interface.php">Strona główna</a></li>
-                <li><a href="user-interface.php">Żaglarstwo</a></li>
+                <li><a href="user-interface.php">Żeglarstwo</a></li>
 <!--                <li><a href="" data-toggle="modal" data-target="#aboutModal">Info</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">
