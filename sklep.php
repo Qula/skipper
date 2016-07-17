@@ -2,76 +2,61 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <a href="sklep.php#onas">
-                <div class="col-md-12 head-desc">
-                    <img src="pic/onas.png" class="img-responsive" alt="">
-                    <div class="head-name">
-                        <p>O nas</p>
-                    </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#onas">
+            <div class="col-md-12 head-desc">
+                <img src="pic/onas.png" class="img-responsive" alt="">
+                <div class="head-name">
+                    <p>O nas</p>
                 </div>
-            </a>
+            </div>
         </div>
-
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <a href="sklep.php#kasydrukarki">
-                <div class="col-md-12 head-desc">
-                    <img src="pic/kasydrukarki.jpg" class="img-responsive" alt="">
-                    <div class="head-name">
-                        <p>Kasy i&nbspdrukarki</p>
-                    </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#kasydrukarki">
+            <div class="col-md-12 head-desc">
+                <img src="pic/kasydrukarki.jpg" class="img-responsive" alt="">
+                <div class="head-name">
+                    <p>Kasy i&nbspdrukarki</p>
                 </div>
-            </a>
+            </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <a href="sklep.php#serwis">
-                <div class="col-md-12 head-desc">
-                    <img src="pic/serwis.jpg" class="img-responsive" alt="">
-                    <div class="head-name">
-                        <p>Serwis</p>
-                    </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#serwis">
+            <div class="col-md-12 head-desc">
+                <img src="pic/serwis.jpg" class="img-responsive" alt="">
+                <div class="head-name">
+                    <p>Serwis</p>
                 </div>
-            </a>
+            </div>
         </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <a href="sklep.php#oprogramowanie">
-                <div class="col-md-12 head-desc">
-                    <img src="pic/oprogramowanie.jpg" class="img-responsive" alt="">
-                    <div class="head-name">
-                        <p>Oprogramowanie</p>
-                    </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#oprogramowanie">
+            <div class="col-md-12 head-desc">
+                <img src="pic/oprogramowanie.jpg" class="img-responsive" alt="">
+                <div class="head-name">
+                    <p>Oprogramowanie</p>
                 </div>
-            </a>
+            </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
-            <a href="sklep.php#sprzetkomputerowy">
-                <div class="col-md-12 head-desc">
-                    <img src="pic/sprzetkomputerowy.jpg" class="img-responsive" alt="">
-                    <div class="head-name">
-                        <p>Sprzęt komputerowy</p>
-                    </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 scroll" data-target="#sprzetkomputerowy">
+            <div class="col-md-12 head-desc">
+                <img src="pic/sprzetkomputerowy.jpg" class="img-responsive" alt="">
+                <div class="head-name">
+                    <p>Sprzęt komputerowy</p>
                 </div>
-            </a>
+            </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
-            <a href="sklep.php#oprogramowaniedlafirm">
-                <div class="col-md-12 head-desc">
-                    <img src="pic/oprogramowaniedlafirm.jpg" class="img-responsive" alt="">
-                    <div class="head-name">
-                        <p>Oprogramowanie dla&nbspfirm</p>
-                    </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 scroll" data-target="#oprogramowaniedlafirm">
+            <div class="col-md-12 head-desc">
+                <img src="pic/oprogramowaniedlafirm.jpg" class="img-responsive" alt="">
+                <div class="head-name">
+                    <p>Oprogramowanie dla&nbspfirm</p>
                 </div>
-            </a>
+            </div>
         </div>
-        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-            <a href="sklep.php#terminale">
-                <div class="col-md-12 head-desc">
-                    <img src="pic/terminale.jpg" class="img-responsive" alt="">
-                    <div class="head-name">
-                        <p>Terminale płatnicze</p>
-                    </div>
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 scroll" data-target="#terminale">
+            <div class="col-md-12 head-desc">
+                <img src="pic/terminale.jpg" class="img-responsive" alt="">
+                <div class="head-name">
+                    <p>Terminale płatnicze</p>
                 </div>
-            </a>
+            </div>
         </div>
     </div>
 
@@ -124,7 +109,7 @@
     <div class="row">
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
 
-            <h4>Prowadzimy serwis komputerów i urządzeń fiskalnych:</h4>
+            <h4>Prowadzimy serwis: </h4>
             <ul class="custom-bullet list-unstyled ">
                 <li><i class="glyphicon glyphicon-chevron-right"></i> komputerów stacjonarnych</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> laptopów</li>
@@ -198,7 +183,7 @@
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                <img src="pic/sprzet.jpg" class="img-responsive">
+                <img src="pic/sprzet.jpg" class="img-responsive" id="sp">
             </div>
         </div>
     </div>

@@ -38,3 +38,30 @@ function iframeModalOpen(){
 $(document).ready(function(){
     iframeModalOpen();
 });
+
+$(".scroll").on("click", function(){
+    $(window).scrollTo(this.dataset.target, 800);
+});
+
+
+
+$(window).on('scroll', function () {
+
+    console.log(isScrolledIntoView("#sprzetkomputerowy"));
+    if(isScrolledIntoView("#sprzetkomputerowy")){
+        $("#sp").css({opacity: 1.0, visibility: "visible"}).stop().animate({opacity: 0}, 200);
+    }
+});
+
+function isScrolledIntoView(elem) {
+    if ($(elem).length == 0) {
+        return false;
+    }
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+    //  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)); //try it, will only work for text
+    return (docViewBottom >= elemTop && docViewTop <= elemBottom);
+}

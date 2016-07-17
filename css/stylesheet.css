@@ -108,3 +108,7 @@ hr {
 #onas {
     /*padding-left: 20px;*/
 }
+
+#sp {
+    visibility: hidden;
+}
