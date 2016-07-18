@@ -71,7 +71,7 @@
     <hr>
     <div class="row">
         <?php
-        //include 'model.php';
+        include 'model.php';
         $model = Model::getInstance();
         $result = $model->getPosts();
         foreach($result as $row){

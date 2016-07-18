@@ -1,8 +1,8 @@
 console.log('Testing console');
 
 $(".head-desc").hover(function() {
-    $(this).children().stop().animate({"backgroundColor":"#efbe5c"},200);
-    $(this).stop().animate({"borderColor":"#efbe5c"},200);
+    $(this).children().stop().animate({"backgroundColor":"#193d5b"},200);
+    $(this).stop().animate({"borderColor":"#193d5b"},200);
 }, function() {
     $(this).children().stop().animate({"backgroundColor":"rgb(51, 122, 183)"}, 600);
     $(this).stop().animate({"borderColor": "rgb(51, 122, 183)"}, 600);
@@ -42,14 +42,21 @@ $(document).ready(function(){
 $(".scroll").on("click", function(){
     $(window).scrollTo(this.dataset.target, 800);
 });
-
+$(".scrollToTop").on("click", function() {
+    $(window).scrollTo(".navbar", 500);
+});
 
 
 $(window).on('scroll', function () {
+    if ($(this).scrollTop() > 300) {
+        $('.scrollToTop').fadeIn();
+    } else {
+        $('.scrollToTop').fadeOut();
+    }
 
     console.log(isScrolledIntoView("#sprzetkomputerowy"));
-    if(isScrolledIntoView("#sprzetkomputerowy")){
-        $("#sp").css({opacity: 1.0, visibility: "visible"}).stop().animate({opacity: 0}, 200);
+    if(isScrolledIntoView("#sprzetkomputerowy") && !($("sp").is(":visible")) ){
+        //$("#sp").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 5000);
     }
 });
 

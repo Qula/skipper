@@ -16,6 +16,8 @@
 <!--    </div>-->
 <!--</div>-->
 
+<span class="scrollToTop" title="Wróc na początek!"><i class="glyphicon glyphicon-arrow-up"></i></span>
+
     <script src="bootstrap336/js/jquery-1.12.2.min.js"></script>
     <script src="bootstrap336/js/bootstrap.min.js"></script>
     <script src="bootstrap336/js/jquery-ui.min.js"></script>
