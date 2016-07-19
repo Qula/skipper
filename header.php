@@ -28,14 +28,14 @@ session_start();
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="user-interface.php"><img src="pic/logo.png" alt="Logo">
+            <a class="navbar-brand" href="sklep.php"><img src="pic/logo.png" alt="Logo">
             </a>
         </div>
 
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
-                <li class="active"><a href="user-interface.php">Strona główna</a></li>
-                <li><a href="user-interface.php">Żeglarstwo</a></li>
+                <li><a href="/skipper/sklep.php"><strong>Strona główna</strong></a></li>
+                <li><a href="/skipper/zeglarstwo.php"><strong>Żeglarstwo</strong></a></li>
 <!--                <li><a href="" data-toggle="modal" data-target="#aboutModal">Info</a></li>-->
             </ul>
             <ul class="nav navbar-nav navbar-right">

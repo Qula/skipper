@@ -67,3 +67,7 @@
         background-color: #286192;
     }
 }
+
+.navbar-default {
+    border-radius: 0;
+}

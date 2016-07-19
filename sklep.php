@@ -288,8 +288,6 @@
 
     <hr>
 
-    <p> Stopka2</p>
-
 </div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog">

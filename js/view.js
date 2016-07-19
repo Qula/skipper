@@ -47,17 +47,24 @@ $(".scrollToTop").on("click", function() {
 });
 
 
+var scrollHeight, scrollPosition;
 $(window).on('scroll', function () {
     if ($(this).scrollTop() > 300) {
-        $('.scrollToTop').fadeIn();
+        $(".scrollToTop").stop().animate({ bottom: 10}, 300);
+        scrollHeight = $(document).height();
+        scrollPosition = $(window).height() + $(window).scrollTop();
+        if ((scrollHeight - scrollPosition) / scrollHeight === 0) {
+            $(".scrollToTop").stop().animate({ bottom: $(".foot").height()}, 300);
+        }
     } else {
-        $('.scrollToTop').fadeOut();
+        $(".scrollToTop").stop().animate({ bottom: -100}, 300);
     }
 
-    console.log(isScrolledIntoView("#sprzetkomputerowy"));
-    if(isScrolledIntoView("#sprzetkomputerowy") && !($("sp").is(":visible")) ){
-        //$("#sp").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 5000);
-    }
+
+    //console.log(isScrolledIntoView("#sprzetkomputerowy"));
+    //if(isScrolledIntoView("#sprzetkomputerowy") && !($("sp").is(":visible")) ){
+    //    //$("#sp").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 5000);
+    //}
 });
 
 function isScrolledIntoView(elem) {
@@ -72,3 +79,7 @@ function isScrolledIntoView(elem) {
     //  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)); //try it, will only work for text
     return (docViewBottom >= elemTop && docViewTop <= elemBottom);
 }
+
+$(document).ready(function() {
+    $('a[href="' + this.location.pathname + '"]').parent().addClass('active'); // bootstrap navbar active
+});

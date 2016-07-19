@@ -95,11 +95,20 @@ hr {
     color: rgb(51, 122, 183);
     background-color: rgb(51, 122, 183);
     height: 2px;
+    /*margin-top: 40px;*/
 }
 
 @media screen and (min-width: 768px) {
     #terminale-line {
         border-right: 1px solid rgb(51, 122, 183);
+    }
+    hr {
+        margin-top: 40px;
+        margin-bottom: 0;
+    }
+    h1 {
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
 }
 .screen{
@@ -116,14 +125,28 @@ hr {
 
 .scrollToTop {
     position: fixed;
-    bottom: 10px;
+    bottom: -100px;
     right: 20px;
     text-decoration: none;
     font-size: 50px;
     color: rgb(51, 122, 183);
     cursor: pointer;
-    display: none;
 }
 .scrollToTop :hover {
     color: #193d5b;
+}
+footer > .navbar {
+    position: relative;
+    bottom: 0;
+    margin: 50px 0 0 0;
+    width: 100%;
+}
+.foot {
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    vertical-align: middle;
+}
+.foot > p {
+    margin: 0;
 }

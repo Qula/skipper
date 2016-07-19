@@ -27,6 +27,10 @@
 
 </body>
 <footer>
-
+    <nav class="navbar navbar-default ">
+        <div class="container foot">
+            <p>Copyright 2016 | Wszelkie prawa zastrzeżone | SKIPPER</p>
+        </div>
+    </nav>
 </footer>
 </html>

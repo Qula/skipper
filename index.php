@@ -7,14 +7,14 @@ if(isset($_SESSION['login'])) {
             header('Location: user-manager.php?command=logout');
         }
     } else {
-        header('Location: user-interface.php');
+        header('Location: zeglarstwo.php');
     }
 }
 else{
     if(isset($_GET['error'])) {
         header('Location: login.php?error=' . $_GET['error']);
     } else {
-        header('Location: user-interface.php');
+        header('Location: sklep.php');
     }
 }
 ?>
