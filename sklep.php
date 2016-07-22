@@ -63,11 +63,7 @@
     <hr>
     <h1 id="onas">O nas</h1>
     <div class="row">
-<!--        <img class="img-responsive col-lg-6 col-md-6 col-sm-6 col-xs-10" src="http://placehold.it/500x400">-->
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">
-<!--            <iframe class="embed-responsive-item" frameborder="0" src="https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20" width="100%" height="400"></iframe>-->
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
             <p>Od ponad X lat specjalizujemy się w... coś tam dalej</p>
             <p>Jeszcze wiecej</p>
             <p>i jeszcze!</p>
@@ -76,7 +72,7 @@
                 <strong>SKIPPER - Paweł Butscher</strong>
                 <br>33-300 Nowy Sącz
                 <br>ul. Jana Matejki 36
-<!--                <br><a href="" data-toggle="modal" data-target="#aboutModal">Mapa</a>-->
+                <!--                <br><a href="" data-toggle="modal" data-target="#aboutModal">Mapa</a>-->
 <!--                <button type="button" class="modalButton" data-toggle="modal" data-src="https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20" data-width="600" data-height="450" data-target="#myModal">Google maps</button>-->
             </address>
             <h3>Kontakt: </h3>
@@ -88,8 +84,24 @@
                 <br>
                 <a href="sklep.php#kontakt">Napisz do nas!</a>
             </address>
-
         </div>
+
+        <div class="col-lg-5 col-md-5 col-sm-6 col-xs-10 before-card">
+            <div id="card">
+                <div class="front">
+                    <img class="img-responsive" src="pic/mapa.JPG">
+                </div>
+                <div class="back">
+                    <img class="img-responsive" id="map-load" src="pic/load.gif">
+                    <iframe class="embed-responsive-item" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+<!--        <img class="img-responsive col-lg-6 col-md-6 col-sm-6 col-xs-10" src="http://placehold.it/500x400">-->
+<!--        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">-->
+<!--            <iframe class="embed-responsive-item" frameborder="0" src="https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20" width="100%" height="400"></iframe>-->
+<!--        </div>-->
+
     </div>
 
     <hr>
@@ -229,7 +241,7 @@
     <div class="row">
         <div class="col-lg-6 col-md-8 col-sm-6 col-xs-10">
 
-            <form class="form-horizontal" role="form" method="post" action="#">
+            <form id="ajax-contact" class="form-horizontal" role="form" method="post" action="mailer.php">
 
                 <div class="form-group">
                     <label for="select" class="col-sm-2 control-label">W&nbspsprawie</label>
@@ -258,11 +270,11 @@
                 <div class="form-group">
                     <label for="message" class="col-sm-2 control-label">Treść</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" rows="4" name="message"></textarea>
+                        <textarea id="message" class="form-control" rows="4" name="message"></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="message" class="col-sm-2 control-label">Zaznacz</label>
+                    <label for="captcha" class="col-sm-2 control-label">Zaznacz</label>
                     <div class="col-sm-10 ">
 <!--                        <div class="g-recaptcha" data-sitekey="6LfGxBwTAAAAAGTdagt32GKPtufgym1IzgE7UPyu">-->
 <!--                    </div>-->
@@ -275,19 +287,22 @@
                         <input id="submit" name="submit" type="submit" value="Wyślij" class="btn btn-primary">
                     </div>
                 </div>
+            </form>
                 <div class="form-group">
                     <div class="col-sm-10 col-sm-offset-2">
+                        <div id="form-messages"></div>
                         <! Will be used to display an alert to the user>
                     </div>
                 </div>
-            </form>
+
 
         </div>
 
     </div>
 
-    <hr>
 
+
+    <hr>
 </div>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog">

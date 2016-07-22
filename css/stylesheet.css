@@ -150,3 +150,12 @@ footer > .navbar {
 .foot > p {
     margin: 0;
 }
+.before-card {
+    height: 200px;
+}
+#map-load {
+    margin-top: 90px;
+}
+.back >img {
+    margin: 0 auto;
+}

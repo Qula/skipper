@@ -83,3 +83,34 @@ function isScrolledIntoView(elem) {
 $(document).ready(function() {
     $('a[href="' + this.location.pathname + '"]').parent().addClass('active'); // bootstrap navbar active
 });
+
+var cardClick = false;
+$("#card").flip();
+$("#card").on('flip:done',function(){
+
+    if(!cardClick){
+        var src = "https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20";
+        var width = $(".front img").width() || 640; // larghezza dell'iframe se non impostato usa 640
+        var height = $(".front img").height() || 360; // altezza dell'iframe se non impostato usa 360
+
+
+
+        // stampiamo i nostri dati nell'iframe
+        $(".back iframe").attr({
+            'src': src,
+            'height': height,
+            'width': width,
+            'allowfullscreen':''
+        });
+        deteleMap();
+        cardClick = true;
+    }
+
+    //Disclaimer: ^This function is fake :)
+});
+
+function deteleMap(){
+    setTimeout(function() {
+        $('#map-load').remove();
+    }, 500);
+}
