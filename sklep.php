@@ -72,8 +72,6 @@
                 <strong>SKIPPER - Paweł Butscher</strong>
                 <br>33-300 Nowy Sącz
                 <br>ul. Jana Matejki 36
-                <!--                <br><a href="" data-toggle="modal" data-target="#aboutModal">Mapa</a>-->
-<!--                <button type="button" class="modalButton" data-toggle="modal" data-src="https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20" data-width="600" data-height="450" data-target="#myModal">Google maps</button>-->
             </address>
             <h3>Kontakt: </h3>
             <address>
@@ -236,7 +234,7 @@
 
 
     <hr>
-<!--    <script src='https://www.google.com/recaptcha/api.js'></script>-->
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <h1 id="kontakt">Kontakt</h1>
     <div class="row">
         <div class="col-lg-6 col-md-8 col-sm-6 col-xs-10">
@@ -244,7 +242,7 @@
             <form id="ajax-contact" class="form-horizontal" role="form" method="post" action="mailer.php">
 
                 <div class="form-group">
-                    <label for="select" class="col-sm-2 control-label">W&nbspsprawie</label>
+                    <label for="select" class="col-sm-2 control-label">W&nbspsprawie*</label>
                     <div class="col-sm-10">
                         <select class="form-control col-sm-10">
                             <option>Aktyna</option>
@@ -255,35 +253,39 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="email" class="col-sm-2 control-label">E-mail</label>
+                    <label for="email" class="col-sm-2 control-label">E-mail*</label>
                     <div class="col-sm-10">
-                        <input type="email" class="form-control" id="email" name="email" placeholder="przyklad@domena.pl" value="">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="przyklad@domena.pl" value="" required>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="name" class="col-sm-2 control-label">Temat</label>
+                    <label for="telefon" class="col-sm-2 control-label">Telefon</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Temat wiadomości" value="">
+                        <input type='tel' pattern="^\d{3}?\d{3}?\d{3}$" class="form-control" id="telephone" name="telefon" placeholder="123-456-789" title="Format: 123-456-789" value="">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name" class="col-sm-2 control-label">Temat*</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Temat wiadomości" value="" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label for="message" class="col-sm-2 control-label">Treść</label>
+                    <label for="message" class="col-sm-2 control-label">Treść*</label>
                     <div class="col-sm-10">
-                        <textarea id="message" class="form-control" rows="4" name="message"></textarea>
+                        <textarea id="message" class="form-control" rows="4" name="message" placeholder="Przykładowa treść wiadomości" required></textarea>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="captcha" class="col-sm-2 control-label">Zaznacz</label>
+                    <label for="captcha" class="col-sm-2 control-label">Zaznacz*</label>
                     <div class="col-sm-10 ">
-<!--                        <div class="g-recaptcha" data-sitekey="6LfGxBwTAAAAAGTdagt32GKPtufgym1IzgE7UPyu">-->
-<!--                    </div>-->
-
-                </div>
-
+                        <div class="g-recaptcha" data-sitekey="6LfGxBwTAAAAAGTdagt32GKPtufgym1IzgE7UPyu"></div>
+                    </div>
                 </div><br>
                 <div class="form-group">
                     <div class="col-sm-10 col-sm-offset-2">
+                        <p>* Wymagane pola</p>
                         <input id="submit" name="submit" type="submit" value="Wyślij" class="btn btn-primary">
                     </div>
                 </div>
@@ -291,7 +293,7 @@
                 <div class="form-group">
                     <div class="col-sm-10 col-sm-offset-2">
                         <div id="form-messages"></div>
-                        <! Will be used to display an alert to the user>
+
                     </div>
                 </div>
 

@@ -82,6 +82,13 @@ function isScrolledIntoView(elem) {
 
 $(document).ready(function() {
     $('a[href="' + this.location.pathname + '"]').parent().addClass('active'); // bootstrap navbar active
+
+    var $recaptcha = document.querySelector('#g-recaptcha');
+
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "required");
+    }
+
 });
 
 var cardClick = false;
@@ -114,3 +121,4 @@ function deteleMap(){
         $('#map-load').remove();
     }, 500);
 }
+
