@@ -13,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $name = strip_tags(trim($_POST["name"]));
             $name = str_replace(array("\r","\n"),array(" "," "),$name);
+            $contact = strip_tags(trim($_POST["contact"]));
             $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
             $tel = strip_tags(trim($_POST["telefon"]));
             $message = trim($_POST["message"]);
@@ -44,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
+            //DO ZAMIANY
             $mail->From = 'blogasek.blogasek@interia.pl';
             $mail->FromName = $name;
             $mail->addAddress('blogasek.blogasek@interia.pl');
@@ -53,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->CharSet = 'UTF-8';
 
             $mail->Subject = "Nowa wiadomość od ".$name;
-            $mail->Body = "Formularz strony.\r\n"."Nazwa: ".$name."\r\nE-mail: ".$email."\r\nTelefon: ".$tel."\r\nTreść:\r\n".$message;
+            $mail->Body = "Formularz strony.\r\n W sprawie:".$contact."\r\nNazwa: ".$name."\r\nE-mail: ".$email."\r\nTelefon: ".$tel."\r\nTreść:\r\n".$message;
 
             if(!$mail->send())
             {

@@ -159,3 +159,14 @@ footer > .navbar {
 .back >img {
     margin: 0 auto;
 }
+
+.hand {
+    cursor: pointer;
+}
+.aktyn {
+    margin-top: 20px;
+}
+.aktyn div {
+    height: 35px;
+    /*margin-left: 5px;*/
+}

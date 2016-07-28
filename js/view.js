@@ -122,3 +122,21 @@ function deteleMap(){
     }, 500);
 }
 
+var aktynActive ;
+var flipped;
+$("#asprzedaz, #afinanse, #aplace, #aksiega, #asrodki, #acennik").on("click", function(){
+    $("#"+flipped).flip(false);
+    $("."+aktynActive).fadeOut("slow", function() {
+        $(this).addClass("hidden");
+    });
+
+    aktynActive = $(this).attr("data-name");
+    flipped = $(this).attr("id");
+    $("."+aktynActive).fadeIn("slow", function() {
+        $(this).removeClass("hidden");
+    });
+
+});
+
+$("#asprzedaz, #afinanse, #aplace, #aksiega, #asrodki, #acennik").flip();
+
