@@ -27,6 +27,8 @@
     <script src="js/view.js"></script>
     <script src="js/ajax-mail.js"></script>
 
+    <script src="js/kasy.js"></script>
+
 </body>
 <footer>
     <nav class="navbar navbar-default ">

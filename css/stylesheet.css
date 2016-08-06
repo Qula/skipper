@@ -170,3 +170,12 @@ footer > .navbar {
     height: 35px;
     /*margin-left: 5px;*/
 }
+
+#kasy {
+    margin-top: 20px;
+    font-size: 20px;
+}
+#kasy a {
+    text-decoration: none
+    ;
+}

@@ -105,11 +105,20 @@
     <hr>
     <h1 id="kasydrukarki">Kasy i drukarki</h1>
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-10" >
-
+        <div class="col-xs-12" >
+            W ofercie posiadamy kasy oraz drukarki fiskalne. Więcej szczegółow po wybraniu kategorii:
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center" id="kasy">
+            <a href="kasy.php">
+                <span>Kasy fiskalne</span>
+                <img src="pic/kasy_fiskalne.jpg" class="img-responsive center-block">
+            </a>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center" id="kasy">
+            <a href="#">
+                <span>Drukarki fiskalne</span>
+                <img src="pic/drukarki_fiskalne.jpg" class="img-responsive center-block">
+            </a>
         </div>
     </div>
 
