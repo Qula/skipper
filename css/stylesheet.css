@@ -43,34 +43,28 @@
 }
 .head-desc {
     cursor: pointer;
-    padding: 0;
-    margin-bottom: 10px;
     border-style: solid;
-    border-color: rgb(51, 122, 183); ;
+    border-color: rgb(51, 122, 183);
+    position: relative;
     min-height: 150px;
-    display: block;
-    /*background-image: url("../pic/about.jpg");*/
+    margin-top: 8px;
 }
 .head-desc > img {
-    margin: auto auto;
-    max-height: 90px;
+    margin: auto;
+    max-height: 100px;
 }
 .head-name {
-    text-align: center;
-    margin-top: 10px;
     text-transform: uppercase;
     color: #ffffff;
     font-weight: bold;
     background-color: rgb(51, 122, 183);
-    height: 50px;
-
-    /*background-color: red;*/
-}
-.head-name > p {
     position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 0;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+
 }
 
 .grey {

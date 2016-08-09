@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Nasz zespół i jacht</p>
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Galeria zdjęć i filmów</p>
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>SEZON 2016</p>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Prognoza pogody</p>
@@ -36,7 +36,7 @@
         </div>
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="col-md-12 head-desc"  data-kasa="lupo">
+            <div class="head-desc"  data-kasa="lupo">
                 <img src="kdpic/Lupo_1.JPG" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Aktualnosci</p>
@@ -45,8 +45,8 @@
         </div>
 
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="col-md-12 head-desc">
-                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
+            <div class="head-desc">
+<!--                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">-->
                 <div class="head-name">
                     <p>Najbliższe regaty</p>
                 </div>

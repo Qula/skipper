@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#onas">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="pic/onas.png" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>O nas</p>
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#kasydrukarki">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="pic/kasydrukarki.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Kasy i&nbspdrukarki</p>
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#serwis">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="pic/serwis.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Serwis</p>
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#oprogramowanie">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="pic/oprogramowanie.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Oprogramowanie</p>
@@ -35,7 +35,7 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 scroll" data-target="#sprzetkomputerowy">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="pic/sprzetkomputerowy.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Sprzęt komputerowy</p>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 scroll" data-target="#oprogramowaniedlafirm">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="pic/oprogramowaniedlafirm.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Oprogramowanie dla&nbspfirm</p>
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 scroll" data-target="#terminale">
-            <div class="col-md-12 head-desc">
+            <div class="head-desc">
                 <img src="pic/terminale.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Terminale płatnicze</p>
