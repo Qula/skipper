@@ -37,7 +37,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 scroll" data-target="#sprzetkomputerowy">
             <div class="head-desc">
                 <img src="pic/sprzetkomputerowy.jpg" class="img-responsive" alt="">
-                <div class="head-name">
+                <div class="head-name special">
                     <p>Sprzęt komputerowy</p>
                 </div>
             </div>
@@ -45,7 +45,7 @@
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 scroll" data-target="#oprogramowaniedlafirm">
             <div class="head-desc">
                 <img src="pic/oprogramowaniedlafirm.jpg" class="img-responsive" alt="">
-                <div class="head-name">
+                <div class="head-name special">
                     <p>Oprogramowanie dla&nbspfirm</p>
                 </div>
             </div>
@@ -80,7 +80,7 @@
                 <br>Tel: 664-455-799
                 <br>Tel: 18 443-56-18
                 <br>
-                <a href="sklep.php#kontakt">Napisz do nas!</a>
+                <p class="scroll" id="napiszdonas" data-target="#kontakt">Napisz do nas!</p>
             </address>
         </div>
 
@@ -354,16 +354,14 @@
     <hr>
     <h1 id="terminale">Terminale płatnicze</h1>
     <div class="row">
-        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" id="terminale-line">
-            <h4>Oferujemy terminale dwóch operatorów:</h4>
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <h4>Oferujemy terminale operatora:</h4>
             <img src="pic/paytel_logo.jpg" class="img-responsive">
-            <p class="text-center">oraz</p>
-            <img src="pic/pekaosa_logo.png" class="img-responsive">
 
         </div>
-        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+        <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12" id="terminale-line">
             <h4>Pozwalają na:</h4>
-            <ul class="custom-bullet list-unstyled ">
+            <ul class="list-unstyled ">
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż i dystrybucję doładowań do przedpłacanych kont sieci GSM poprzez terminale (w trybie off-line) oraz Internet</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż produktów operatorów telekomunikacyjnych VoIP</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Obsługę płatności masowych (rachunki za telefon, wodę, prąd, gaz itp.)</li>

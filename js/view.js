@@ -140,3 +140,14 @@ $("#asprzedaz, #afinanse, #aplace, #aksiega, #asrodki, #acennik").on("click", fu
 
 $("#asprzedaz, #afinanse, #aplace, #aksiega, #asrodki, #acennik").flip();
 
+
+$(document).ready(function() {
+    var docHeight = $(window).height();
+    var footerHeight = $('#footer').outerHeight();
+    var footerTop = $('#footer').position().top + footerHeight;
+    console.log( footerTop);
+    if (footerTop < docHeight) {
+        $('#footer').css('margin-top',  (docHeight - footerTop) + footerHeight -2 + 'px');
+        console.log( (docHeight - footerTop)+footerHeight);
+    }
+});

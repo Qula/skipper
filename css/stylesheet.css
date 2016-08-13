@@ -66,6 +66,14 @@
     text-align: center;
 
 }
+@media screen and (max-width: 550px){
+    .special {
+        line-height: normal;
+    }
+    .special p {
+        margin-top: 5%;
+    }
+}
 
 .grey {
     background-color: #F4F4F4;
@@ -94,7 +102,7 @@ hr {
 
 @media screen and (min-width: 768px) {
     #terminale-line {
-        border-right: 1px solid rgb(51, 122, 183);
+        border-left: 1px solid rgb(51, 122, 183);
     }
     hr {
         margin-top: 40px;
@@ -129,6 +137,13 @@ hr {
 .scrollToTop :hover {
     color: #193d5b;
 }
+
+#napiszdonas{
+    cursor: pointer;
+    font-size: 15px;
+    color: rgb(51, 122, 183);;
+}
+
 footer > .navbar {
     position: relative;
     bottom: 0;
@@ -143,7 +158,15 @@ footer > .navbar {
 }
 .foot > p {
     margin: 0;
+    cursor: default;
 }
+
+@media screen and (max-width: 550px){
+    .foot {
+        line-height: normal;
+    }
+}
+
 .before-card {
     height: 200px;
 }
@@ -154,16 +177,28 @@ footer > .navbar {
     margin: 0 auto;
 }
 
+#skipperlog {
+    color: #FFF;
+    text-decoration: none;
+    cursor: default;
+}
+
 .hand {
     cursor: pointer;
 }
 .aktyn {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 .aktyn div {
     height: 35px;
     /*margin-left: 5px;*/
 }
+@media screen and (max-width: 768px) {
+    .aktyn div {
+        height: 60px;
+    }
+}
+
 
 #kasy {
     margin-top: 20px;

@@ -41,7 +41,7 @@ session_start();
             <ul class="nav navbar-nav navbar-right">
 
                     <?php if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
-                        echo '<li><a href="login.php" >Zaloguj się</a></li>';
+//                        echo '<li><a href="login.php" >Zaloguj się</a></li>';
                     }else{
                         echo '<li><a href="admin-manager.php?command=tools">Panel</a> </li>';
                         echo '<li><a href="user-manager.php?command=logout" >Wyloguj się</a></li>';

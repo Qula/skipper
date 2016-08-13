@@ -32,10 +32,16 @@
 
 
 </body>
-<footer>
-    <nav class="navbar navbar-default navbar-fixed-bottom ">
+<footer id="footer">
+    <nav class="navbar navbar-default">
         <div class="container foot">
-            <p>Copyright 2016 | Wszelkie prawa zastrzeżone | SKIPPER</p>
+            <p>Copyright 2016 | Wszelkie prawa zastrzeżone |
+                <?php if (!(isset($_SESSION['login']) && $_SESSION['login'] != '')) {
+                                        echo '<a href="login.php" id="skipperlog" >SKIPPER</a>';
+                }else{
+
+                } ?>
+                </p>
         </div>
     </nav>
 </footer>
