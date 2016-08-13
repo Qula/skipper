@@ -1,59 +1,7 @@
 <?php include 'header.php' ?>
 
 <div class="container">
-    <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="head-desc">
-                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
-                <div class="head-name">
-                    <p>Nasz zespół i jacht</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="head-desc">
-                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
-                <div class="head-name">
-                    <p>Galeria zdjęć i filmów</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="head-desc">
-                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
-                <div class="head-name">
-                    <p>SEZON 2016</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="head-desc">
-                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
-                <div class="head-name">
-                    <p>Prognoza pogody</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="head-desc"  data-kasa="lupo">
-                <img src="kdpic/Lupo_1.JPG" class="img-responsive" alt="">
-                <div class="head-name">
-                    <p>Aktualnosci</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="head-desc">
-<!--                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">-->
-                <div class="head-name">
-                    <p>Najbliższe regaty</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
+    <?php include 'nav-sail.php' ?>
     <hr>
     <h1>Aktualności</h1>
     <p>Bądź na bieżąco!</p>

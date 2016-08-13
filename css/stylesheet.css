@@ -170,6 +170,45 @@ footer > .navbar {
     font-size: 20px;
 }
 #kasy a {
-    text-decoration: none
-    ;
+    text-decoration: none;
+}
+
+.funkcja {
+    text-align: center;
+    margin-top: 20px;
+}
+.funkcja :first-child {
+    font-size: 20px;
+}
+.funkcja img {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    max-height: 30px;
+}
+
+@media screen and (min-width: 992px) {
+    .funkcja {
+        height: 200px;
+        line-height: 200px;
+        margin-top: 0;
+    }
+    .funkcja img {
+        margin-bottom: 0;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .funkcja {
+        font-size: 20px;
+    }
+    .funkcja :first-child {
+        font-size: 30px;
+    }
+}
+
+tr :first-child {
+    font-weight: bold;
+}
+#awcc1470912059267{
+    max-height: 50px;
 }

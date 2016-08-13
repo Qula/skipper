@@ -29,9 +29,11 @@
 
     <script src="js/kasy.js"></script>
 
+
+
 </body>
 <footer>
-    <nav class="navbar navbar-default ">
+    <nav class="navbar navbar-default navbar-fixed-bottom ">
         <div class="container foot">
             <p>Copyright 2016 | Wszelkie prawa zastrzeżone | SKIPPER</p>
         </div>
