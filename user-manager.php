@@ -19,7 +19,8 @@ if($command === 'login') {
 
             $model = Model::getInstance();
             $result = $model->getUser($login, $password);
-            if ($result->num_rows > 0) {
+
+            if ($result) {
                 session_start();
                 $_SESSION['login'] = $login;
                 header('Location: admin.php');

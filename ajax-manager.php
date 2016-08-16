@@ -9,7 +9,7 @@ if(!empty($_POST['action'])){
         $img = $_POST['image'];
         $deleted = $_POST['deleted'];
         $ans = $model->saveData($title, $text, $img, $deleted);
-        if($ans == 'success'){
+        if($ans){
             echo json_encode(array("Zapisano wpis."));
         }else{
             echo json_encode(array("Wystąpił błąd."));
@@ -22,7 +22,7 @@ if(!empty($_POST['action'])){
         $id = $_POST['id'];
         $deleted = $_POST['deleted'];
         $ans = $model->saveAsData($title, $text, $img, $id, $deleted);
-        if($ans == 'success'){
+        if($ans){
             echo json_encode(array("Zapisano wpis."));
         }else{
             echo json_encode(array("Wystąpił błąd."));
@@ -30,6 +30,13 @@ if(!empty($_POST['action'])){
     }
     if($_POST['action'] == 'getPostList'){
         $result = $model->getAllPosts();
-        echo json_encode($result);
+        echo $result;
+    }
+    if($_POST['action'] == 'getMorePosts'){
+        $pagi = (int)$_POST['pagi'];
+        //echo $pagi;
+        //$test = 3;
+        $result = $model->getPosts($pagi);
+        echo json_encode($result->fetchAll(PDO::FETCH_ASSOC));
     }
 }

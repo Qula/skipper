@@ -14,7 +14,7 @@
             if(!empty($result['id'])){
             ?>
                 <div class="col-md-12 post-max">
-                    <h2 class="post-title"><?php echo $result['title'] ?></h2>
+                    <a href="post.php?id=<?php echo $result['id'] ?>" class="post-title"><?php echo $result['title'] ?></a>
                     <div class="post-date"><span class="glyphicon glyphicon glyphicon-calendar" aria-hidden="true"></span> <?php echo $result['date'] ?> / <?php echo $result['who'] ?></div>
                     <div><img class="img-responsive" src="<?php echo $result['image'] ?>" alt="Obraz"></div>
                     <br>
@@ -27,20 +27,28 @@
                 <h2 class="post-title">Taki wpis nie istnieje!</h2>
             <?php
             }
+
+            $model = Model::getInstance();
+            $result = $model->getRandomPosts($id);
+
         }else{
+            $model = Model::getInstance();
+            $id = $model->countPosts();
+            $result = $model->getRandomPosts($id);
             ?>
             <h2 class="post-title">Taki wpis nie istnieje!</h2>
+
+
         <?php
         }
 
-        $model = Model::getInstance();
-        $result = $model->getRandomPosts($id);
+
         ?>
         </div>
         <div class="col-md-4 col-sm-5">
             <?php foreach($result as $row){ ?>
             <div class="col-md-12 post-min">
-                <h2 class="post-title"><?php echo $row['title'] ?></h2>
+                <a  href="post.php?id=<?php echo $row['id'] ?>" class="post-title"><?php echo $row['title'] ?></a>
                 <div class="post-date"><span class="glyphicon glyphicon glyphicon-calendar" aria-hidden="true"></span> <?php echo $row['date'] ?> / <?php echo $row['who'] ?></div>
                 <div><img class="img-responsive" src="<?php echo $row['image'] ?>"></div>
                 <div><?php echo substr($row['text'], 0, 400) ?></div>

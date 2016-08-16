@@ -1,6 +1,6 @@
 .post-min{
-    margin-top: 2px;
-    height: 450px;
+    margin-top: 20px;
+    height: 400px;
     border-bottom: solid;
     border-bottom-color: #0f0f0f;
     text-align: justify;
@@ -34,6 +34,8 @@
 }
 .post-title{
     color: rgb(51, 122, 183);
+    font-size: 1.75em;
+    margin-top: 20px;
 }
 .post-date{
     /*color: #33B0B7;*/
@@ -168,7 +170,7 @@ footer > .navbar {
 }
 
 .before-card {
-    height: 200px;
+    height: 230px;
 }
 #map-load {
     margin-top: 90px;
@@ -229,14 +231,14 @@ footer > .navbar {
     }
     .funkcja img {
         margin-bottom: 0;
-    }
+}
 }
 
 @media screen and (min-width: 768px) {
     .funkcja {
         font-size: 20px;
     }
-    .funkcja :first-child {
+.funkcja :first-child {
         font-size: 30px;
     }
 }
@@ -246,4 +248,7 @@ tr :first-child {
 }
 #awcc1470912059267{
     max-height: 50px;
+}
+#show-more {
+    margin-top: 30px;
 }

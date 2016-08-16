@@ -9,9 +9,14 @@ class Model
     {
         include 'db_config.php';
 
-        $this->conn = new mysqli($dbHost, $dbUserName, $dbPassword, $dbName);
-        if ($this->conn->connect_error) {
-            die("Błąd połączenia z bazą");
+        try
+        {
+            $this->conn = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUserName, $dbPassword);
+        }
+        catch (PDOException $e)
+        {
+            //print "Błąd połączenia z bazą!: " . $e->getMessage() . "<br/>";
+            die("Błąd połaczenia z bazą! Sprobuj ponownie później.");
         }
     }
 
@@ -19,109 +24,124 @@ class Model
     {
     }
 
-    public function saveData($title, $description, $image, $deleted) {
-        $sql = "INSERT INTO news (title, date, who, image, text, deleted) VALUES ('".$title."', CURDATE(), '".'admin'."', '".$image."', '".$description."', '".$deleted."')";
-        $this->conn->query($sql);
-        if($this->conn->error) {
-            return "error";
-        } else {
-            return "success";
+    public function saveData($title, $description, $image, $deleted)
+    {
+        try {
+            $sql = "INSERT INTO news (title, date, who, image, text, deleted) VALUES (:title, CURDATE(), :who, :image, :description, :deleted)";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+            $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+            $stmt->bindValue(':who', "admin", PDO::PARAM_STR);
+            $stmt->bindValue(':image', $image, PDO::PARAM_STR);
+            $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch(PDOException $e){
+            return false;
         }
     }
 
     public function saveAsData($title, $description, $image, $id, $deleted)
     {
-        $sql = "UPDATE news SET title='".$title."', text='".$description."', who='".'admin'."', image='".$image."', deleted='".$deleted."' WHERE id='".$id."'";
-        $this->conn->query($sql);
+        try {
+            $sql = "UPDATE news SET title= :title, text= :description, who= :who, image= :image, deleted= :deleted WHERE id= :id";
 
-        if($this->conn->error) {
-            return "error";
-        } else {
-            return "success";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+            $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+            $stmt->bindValue(':who', "admin", PDO::PARAM_STR);
+            $stmt->bindValue(':image', $image, PDO::PARAM_STR);
+            $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (PDOException $e){
+            return false;
         }
+
     }
 
     public function getPost($id)
     {
         $sql = "SELECT * FROM news WHERE id='$id' AND deleted = 0";
-        $result = $this->conn->query($sql);
-        if($this->conn->error) {
-            return "error";
-        }
-        return $result->fetch_assoc();
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->execute();
+
+        return $stmt->fetch();
     }
 
     public function getEditPost($id)
     {
         $sql = "SELECT * FROM news WHERE id='$id'";
-        $result = $this->conn->query($sql);
-        if($this->conn->error) {
-            return "error";
-        }
-        return $result->fetch_assoc();
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->execute();
+
+        return $stmt->fetch();
     }
 
     public function countPosts(){
         $sql = "SELECT COUNT(*) as ile FROM news WHERE deleted=0";
-        $result = $this->conn->query($sql);
-        if($this->conn->error) {
-            return "error";
-        }
-        return $result->fetch_row()[0];
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->execute();
+
+        return $stmt->rowCount();
+
     }
 
     public function getRandomPosts($id)
     {
+        $sql = "SELECT * FROM news WHERE deleted = 0 AND id NOT IN (:id) ORDER BY id DESC LIMIT 3 ";
 
-        $sql = "SELECT * FROM news WHERE deleted = 0 AND id NOT IN ($id) ORDER BY id DESC LIMIT 3 ";
-        $result = $this->conn->query($sql);
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->execute();
 
-        $rows = [];
-        while($row = $result->fetch_assoc())
-        {
-            $rows[]=$row;
-        }
-        return $rows;
+        return $stmt;
     }
 
-    public function getPosts()
+    public function getPosts($page)
     {
-        $sql = "SELECT * FROM news WHERE deleted = 0 ORDER BY id DESC ";
-        $result = $this->conn->query($sql);
-        if($this->conn->error) {
-            return "error";
-        }
-        $rows = [];
-        while($row = $result->fetch_assoc())
-        {
-            $rows[]=$row;
-        }
-        return $rows;
+        $sql = "SELECT * FROM news WHERE deleted = 0 ORDER BY id DESC LIMIT :page, 3 ";
+
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->bindValue(':page', $page, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return $stmt;
     }
 
     public function getAllPosts()
     {
         $sql = "SELECT * FROM news ORDER BY id DESC";
-        $result = $this->conn->query($sql);
-        if($this->conn->error) {
-            return "error";
-        }
-        $rows = [];
-        while($row = $result->fetch_assoc())
-        {
-            $rows[]=$row;
-        }
-        return $rows;
+
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->execute();
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return json_encode($res);
     }
 
     public function getUser($login, $password) {
-        $sql = "SELECT * FROM users WHERE name = '$login' AND password = '$password'";
-        $result = $this->conn->query($sql);
+        $sql = "SELECT * FROM users WHERE name = :login AND password = :password";
 
-        if($this->conn->error) {
-            return "error";
-        } else {
-            return $result;
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->bindValue(':login', $login, PDO::PARAM_STR);
+        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
+        $stmt->execute();
+
+        if($stmt->rowCount() >0){
+            return true;
+        }else {
+            return false;
         }
     }
 

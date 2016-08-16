@@ -1,6 +1,51 @@
 function goBack() {
     window.history.back();
 }
+var pag = 3;
+var allPosts = true;
+function getMorePosts(){
+    if(allPosts) {
+        console.log("ładuje...");
+        var dataString = 'action=getMorePosts&pagi=' + pag;
+        $.ajax({
+            type: "POST",
+            url: "ajax-manager.php",
+            data: dataString,
+            cache: false,
+            success: function (result) {
+                //console.log(result);
+                var resultGet = JSON.parse(result);
+                var tabLength = resultGet.length;
+                console.log(resultGet.length);
+                var html = '';
+                if (tabLength > 0) {
+
+                    for (var i = 0; i < resultGet.length; i++) {
+                        html +=
+                            '<div class="col-md-4 col-sm-6"><div class="col-md-12 post-min">' +
+                            '<a href="post.php?id='+resultGet[i].id+'" class="post-title">' + resultGet[i].title + '</a>' +
+                            '<div class="post-date"><span class="glyphicon glyphicon glyphicon-calendar" aria-hidden="true"></span> ' + resultGet[i].date + ' / ' + resultGet[i].who + '</div> ' +
+                            '<div><img class="img-responsive" src="' + resultGet[i].image + '" alt="Obraz"></div>' +
+                            '<div>' + (resultGet[i].text).substring(0, 400) + '...</div>' +
+                            '<a class="btn btn-primary read-more" href="post.php?id=' + resultGet[i].id + '">Czytaj więcej <span class="glyphicon glyphicon-chevron-right"></span></a>' +
+                            '</div></div>';
+                    }
+                    $('#posts-load').before(html);
+
+                    console.log("Załadowano!");
+                } else {
+                    $('#show-more').text("To już wszystko :)")
+                    $('#posts-load').before(html);
+                    allPosts = false;
+                }
+                pag = pag + 3;
+            },
+            error: function () {
+                $('#post-load').before('<p>Wystąpił błąd, prosimy sprobować później.</p>')
+            }
+        });
+    }
+}
 
 function saveData(){
     var title = $("#tytul").val();
@@ -60,7 +105,11 @@ function getPostList() {
             }
             html += '</ul>';
             $('#admin-op').append(html);
+        },
+        error: function(){
+            console.log("error");
         }
+
     });
 }
 

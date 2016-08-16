@@ -361,7 +361,7 @@
         </div>
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12" id="terminale-line">
             <h4>Pozwalają na:</h4>
-            <ul class="list-unstyled ">
+            <ul class="custom-bullet list-unstyled ">
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż i dystrybucję doładowań do przedpłacanych kont sieci GSM poprzez terminale (w trybie off-line) oraz Internet</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż produktów operatorów telekomunikacyjnych VoIP</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Obsługę płatności masowych (rachunki za telefon, wodę, prąd, gaz itp.)</li>
