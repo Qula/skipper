@@ -67,6 +67,27 @@ function saveData(){
     });
 }
 
+function saveRegatta(){
+    var name = $("#nazwa").val();
+    var type = $("#klasa").val();
+    var date = $("#data").val();
+    var status = $(".status-select").val();
+    var deleted = $(".view-select").val();
+    var organizer = $("#organizator").val();
+    var dataString = 'action=saveRegatta&name=' + name + '&type=' + type + '&date=' + date + '&organizer=' + organizer +'&status=' + status + '&deleted=' + deleted;
+    $.ajax({
+        type: "POST",
+        url: "ajax-manager.php",
+        data: dataString,
+        cache: false,
+        success: function(result) {
+            var resultGet = JSON.parse(result);
+            alert(resultGet[0]);
+            window.location.assign('admin.php');
+        }
+    });
+}
+
 function saveAsData(){
     var title = $("#tytul").val();
     var description = $("#tekst").val();
@@ -76,6 +97,30 @@ function saveAsData(){
     var deleted = $(".view-select").val();
     console.log(deleted);
     var dataString = 'action=saveAsData&title=' + title + '&text=' + description + '&image=' + image + '&id=' + id + '&deleted=' + deleted;
+    $.ajax({
+        type: "POST",
+        url: "ajax-manager.php",
+        data: dataString,
+        cache: false,
+        success: function(result) {
+            var resultGet = JSON.parse(result);
+            alert(resultGet[0]);
+            window.location.assign('admin.php');
+        }
+    });
+}
+
+function saveAsRegatta(){
+    var name = $("#nazwa").val();
+    var type = $("#klasa").val();
+    var date = $("#data").val();
+    var status = $(".status-select").val();
+    var deleted = $(".view-select").val();
+    var organizer = $("#organizator").val();
+    var id = getUrlVars()["id"];
+
+    var dataString = 'action=saveAsRegatta&name=' + name + '&type=' + type + '&date=' + date + '&organizer=' + organizer + '&status=' + status + '&deleted=' + deleted + '&id=' + id ;
+    console.log(dataString)
     $.ajax({
         type: "POST",
         url: "ajax-manager.php",
@@ -105,6 +150,30 @@ function getPostList() {
             }
             html += '</ul>';
             $('#admin-op').append(html);
+        },
+        error: function(){
+            console.log("error");
+        }
+
+    });
+}
+
+function getRegattaList() {
+    var dataString = 'action=getRegattaList';
+    $("#admin-regaty ul").remove();
+    $.ajax({
+        type: "POST",
+        url: "ajax-manager.php",
+        data: dataString,
+        cache: false,
+        success: function(result) {
+            var resultGet = JSON.parse(result);
+            var html = '<ul>';
+            for (var i = 0; i < resultGet.length; i++) {
+                html += '<li><a  class="btn btn-link" href="admin-manager.php?command=editr&id=' + resultGet[i]['id'] + '">'+resultGet[i]['name']+'</a></li>';
+            }
+            html += '</ul>';
+            $('#admin-regaty').append(html);
         },
         error: function(){
             console.log("error");

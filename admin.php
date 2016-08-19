@@ -21,8 +21,12 @@ include 'admin-header.php';
     <h1>Regaty</h1>
     <div class="row">
         <div class="col-md-10">
-            <p>DODAJ, EDYTUJ</p>
+            <a class="btn btn-link" href="admin-manager.php?command=addRegatta">Dodaj</a>
+            <button class="btn btn-link"  onclick="getRegattaList()">Edytuj</button>
         </div>
+    </div>
+    <div class="row">
+        <div id="admin-regaty" class="col-md-10"></div>
     </div>
 </div>
 <?php include 'footer.php'?>

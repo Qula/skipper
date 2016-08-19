@@ -15,6 +15,20 @@ if(!empty($_POST['action'])){
             echo json_encode(array("Wystąpił błąd."));
         }
     }
+    if($_POST['action'] == 'saveRegatta'){
+        $name = $_POST['name'];
+        $type = $_POST['type'];
+        $date = $_POST['date'];
+        $organizer = $_POST['organizer'];
+        $status = $_POST['status'];
+        $deleted = $_POST['deleted'];
+        $ans = $model->saveRegatta($name, $type, $date, $organizer, $status, $deleted);
+        if($ans){
+            echo json_encode(array("Zapisano wpis."));
+        }else{
+            echo json_encode(array("Wystąpił błąd."));
+        }
+    }
     if($_POST['action'] == 'saveAsData'){
         $title = $_POST['title'];
         $text = $_POST['text'];
@@ -28,8 +42,27 @@ if(!empty($_POST['action'])){
             echo json_encode(array("Wystąpił błąd."));
         }
     }
+    if($_POST['action'] == 'saveAsRegatta'){
+        $name = $_POST['name'];
+        $type = $_POST['type'];
+        $date = $_POST['date'];
+        $organizer = $_POST['organizer'];
+        $status = $_POST['status'];
+        $deleted = $_POST['deleted'];
+        $id = $_POST['id'];
+        $ans = $model->saveAsRegatta($name, $type, $date, $organizer, $status, $deleted, $id);
+        if($ans){
+            echo json_encode(array("Zapisano wpis."));
+        }else{
+            echo json_encode(array("Wystąpił błąd."));
+        }
+    }
     if($_POST['action'] == 'getPostList'){
         $result = $model->getAllPosts();
+        echo $result;
+    }
+    if($_POST['action'] == 'getRegattaList'){
+        $result = $model->getAllRegatta();
         echo $result;
     }
     if($_POST['action'] == 'getMorePosts'){

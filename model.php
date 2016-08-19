@@ -46,6 +46,29 @@ class Model
         }
     }
 
+    public function saveRegatta($name, $type, $date, $organizer, $status, $deleted)
+    {
+        try {
+            $sql = "INSERT INTO regatta (name, type, date, organizer, status, deleted) VALUES (:name, :type, :date, :organizer, :status, :deleted)";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+            $stmt->bindValue(':type', $type, PDO::PARAM_STR);
+            $stmt->bindValue(':date', $date, PDO::PARAM_STR);
+            $stmt->bindValue(':organizer', $organizer, PDO::PARAM_STR);
+            $stmt->bindValue(':status', $status, PDO::PARAM_STR);
+            $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch(PDOException $e){
+            return false;
+        }
+    }
+
     public function saveAsData($title, $description, $image, $id, $deleted)
     {
         try {
@@ -56,6 +79,31 @@ class Model
             $stmt->bindValue(':description', $description, PDO::PARAM_STR);
             $stmt->bindValue(':who', "admin", PDO::PARAM_STR);
             $stmt->bindValue(':image', $image, PDO::PARAM_STR);
+            $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (PDOException $e){
+            return false;
+        }
+
+    }
+
+    public function saveAsRegatta($name, $type, $date, $organizer, $status, $deleted, $id)
+    {
+        try {
+            $sql = "UPDATE regatta SET name= :name, type= :type, date= :date, organizer= :organizer, status= :status, deleted= :deleted WHERE id= :id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':name', $name, PDO::PARAM_STR);
+            $stmt->bindValue(':type', $type, PDO::PARAM_STR);
+            $stmt->bindValue(':date', $date, PDO::PARAM_STR);
+            $stmt->bindValue(':organizer', $organizer, PDO::PARAM_STR);
+            $stmt->bindValue(':status', $status, PDO::PARAM_STR);
             $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
@@ -82,6 +130,15 @@ class Model
     public function getEditPost($id)
     {
         $sql = "SELECT * FROM news WHERE id='$id'";
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->execute();
+
+        return $stmt->fetch();
+    }
+
+    public function getEditRegatta($id)
+    {
+        $sql = "SELECT * FROM regatta WHERE id='$id'";
         $stmt = $this->conn->prepare( $sql );
         $stmt->execute();
 
@@ -119,9 +176,30 @@ class Model
         return $stmt;
     }
 
+    public function getRegatta()
+    {
+        $sql = "SELECT * FROM regatta WHERE deleted = 0 ORDER BY date ASC";
+
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->execute();
+
+        return $stmt;//->fetchAll(PDO::FETCH_ASSOC);;
+    }
+
     public function getAllPosts()
     {
         $sql = "SELECT * FROM news ORDER BY id DESC";
+
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->execute();
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return json_encode($res);
+    }
+
+    public function getAllRegatta()
+    {
+        $sql = "SELECT * FROM regatta ORDER BY date ASC";
 
         $stmt = $this->conn->prepare( $sql );
         $stmt->execute();

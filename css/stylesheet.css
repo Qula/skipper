@@ -252,3 +252,10 @@ tr :first-child {
 #show-more {
     margin-top: 30px;
 }
+
+.regaty-nazwa {
+    font-size: 18px;
+}
+.regaty-img {
+    max-height: 400px;
+}
