@@ -11,14 +11,16 @@ include 'admin-header.php';
         <div class="col-md-10 ">
             <h5>Typ wpisu:</h5>
             <select name="obraz" class="pic-select">
-                <option value="news" selected="selected">Zawiadomienie</option>
-                <option value="finish">Wyniki</option>
-                <option value="slon">Galeria</option>
-                <option value="slon">Inne</option>
+                <option value="zawiadomienie">Zawiadomienie</option>
+                <option value="wyniki">Wyniki</option>
+                <option value="galeria">Galeria</option>
+                <option value="inne" selected="selected">Inne</option>
             </select>
             <h5>Tytuł:</h5>
             <textarea id="tytul" class="form-control" rows="1" name="tytul" required></textarea>
-            <h5>Tekst::</h5>
+            <h5>Tekst wyświetlany na głownej (max 400 znaków):</h5>
+            <textarea id="tekstmin" class="form-control" rows="5" name="tekstmin" required></textarea>
+            <h5>Tekst:</h5>
             <textarea id="tekst" class="form-control" rows="5" name="tekst" required></textarea>
 
             <h5>Wyswietlaj na głownej stronie:</h5>

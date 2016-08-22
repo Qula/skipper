@@ -51,7 +51,7 @@
                 <a  href="post.php?id=<?php echo $row['id'] ?>" class="post-title"><?php echo $row['title'] ?></a>
                 <div class="post-date"><span class="glyphicon glyphicon glyphicon-calendar" aria-hidden="true"></span> <?php echo $row['date'] ?> / <?php echo $row['who'] ?></div>
                 <div><img class="img-responsive" src="<?php echo $row['image'] ?>"></div>
-                <div><?php echo substr($row['text'], 0, 400) ?></div>
+                <div><?php echo substr($row['textmin'], 0, 400) ?></div>
                 <a class="btn btn-primary read-more" href="post.php?id=<?php echo $row['id'] ?>">Czytaj więcej <span class="glyphicon glyphicon-chevron-right"></span></a>
             </div>
             <?php } ?>

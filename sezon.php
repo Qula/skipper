@@ -27,15 +27,14 @@
                         <div id="collapse<?php echo $count; ?>" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <div class="row">
-                                <div class="col-md-4 col-xs-12"><span class="regaty-nazwa">Klasa:</span> <?php echo $row['type'] ?></div>
-                                <div class="col-md-4 col-xs-12"><span class="regaty-nazwa">Termin:</span> <?php echo $row['date'] ?></div>
-                                <div class="col-md-4 col-xs-12"><span class="regaty-nazwa">Organizator:</span> <?php echo $row['organizer'] ?></div>
-
-                                <div class="col-md-12 col-xs-12"><span class="regaty-nazwa">Zawiadomienie:</span><a href="zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg"> <img src="zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg" class="img-responsive regaty-img"></a></div>
-                                <div class="col-md-12 col-xs-12"><span class="regaty-nazwa">Wyniki:</span></div>
-                                <div class="col-md-12 col-xs-12"><span class="regaty-nazwa">Galeria:</span></div>
-
-
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa">Klasa:</span> <?php echo $row['type'] ?></div>
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa">Termin:</span> <?php echo $row['date'] ?></div>
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa">Organizator:</span> <?php echo $row['organizer'] ?></div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['notification']) {echo '<a href="post.php?id='.$row['notification'].'" target="_blank">Zawiadomienie</a>';} ?></span></div>
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['results']) {echo '<a href="post.php?id='.$row['results'].'" target="_blank">Wyniki</a>';} ?></span></div>
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['gallery']) {echo $row['gallery']; }?></span></div>
                                 </div>
                             </div>
                         </div>

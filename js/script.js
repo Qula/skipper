@@ -1,6 +1,52 @@
 function goBack() {
     window.history.back();
 }
+
+$(".pic-select").change(function (){
+    var regaty = "";
+
+    var selected = $(".pic-select").val();
+    if(selected === "zawiadomienie"){
+        $(".zawiadomienie").remove();
+        //$(".pic-select").after("" +
+        //    "<h5 class='zawiadomienie'>Opis do zawiadomienia (opcjonalnie):</h5>" +
+        //    "<textarea id='zawiadomienie-opis' class='form-control zawiadomienie' rows='1' name='zawiadomienie-opis'></textarea>" +
+        //    "<h5 class='zawiadomienie'>Link do zawiadomienia:</h5>" +
+        //    "<textarea id='zawiadomienie-link' class='form-control zawiadomienie' rows='1' name='zawiadomienie-link' placeholder='zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea> ");
+        getRegattaListAd();
+    }else if(selected == "wyniki"){
+        $(".zawiadomienie").remove();
+        getRegattaListAd();
+    }else if(selected === "galeria"){
+        $(".zawiadomienie").remove();
+        getRegattaListAd();
+    }else if(selected === "inne"){
+        $(".zawiadomienie").remove();
+    }
+});
+function getRegattaListAd() {
+    var dataString = 'action=getRegattaList';
+    $.ajax({
+        type: "POST",
+        url: "ajax-manager.php",
+        data: dataString,
+        cache: false,
+        success: function(result) {
+            var resultGet = JSON.parse(result);
+            var html = '<h5 class="zawiadomienie">Regaty:</h5><select name="regaty" class="regaty-select zawiadomienie">';
+            for (var i = 0; i < resultGet.length; i++) {
+                html += '<option value="'+ resultGet[i]['id'] +'">'+resultGet[i]['name']+'</option>';
+            }
+            html += '</select>';
+            $('.pic-select').after(html);
+        },
+        error: function(){
+            console.log("error");
+        }
+
+    });
+}
+
 var pag = 3;
 var allPosts = true;
 function getMorePosts(){
@@ -50,10 +96,14 @@ function getMorePosts(){
 function saveData(){
     var title = $("#tytul").val();
     var description = $("#tekst").val();
-    var image = 'pic/'+$(".pic-select").val()+'.jpg';
+    var image = $(".pic-select").val();
     var deleted = $(".view-select").val();
-    console.log(deleted);
-    var dataString = 'action=saveData&title=' + title + '&text=' + description + '&image=' + image + '&deleted=' + deleted;
+    var regatta = $(".regaty-select").val();
+    var descriptionmin = $('#tekstmin').val();
+
+
+    var dataString = 'action=saveData&title=' + title + '&text=' + description + '&textmin=' + descriptionmin + '&image=' + image + '&deleted=' + deleted + '&rid=' + regatta;
+    console.log(dataString);
     $.ajax({
         type: "POST",
         url: "ajax-manager.php",
@@ -91,7 +141,7 @@ function saveRegatta(){
 function saveAsData(){
     var title = $("#tytul").val();
     var description = $("#tekst").val();
-    var image = 'pic/'+$(".pic-select").val()+'.jpg';
+    var image = $(".pic-select").val();
     console.log(image);
     var id = getUrlVars()["id"];
     var deleted = $(".view-select").val();

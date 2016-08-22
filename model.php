@@ -24,25 +24,28 @@ class Model
     {
     }
 
-    public function saveData($title, $description, $image, $deleted)
+    public function saveData($title, $description, $descriptionmin, $image, $deleted)
     {
         try {
-            $sql = "INSERT INTO news (title, date, who, image, text, deleted) VALUES (:title, CURDATE(), :who, :image, :description, :deleted)";
+            $sql = "INSERT INTO news (title, date, who, image, textmin, text, deleted) VALUES (:title, CURDATE(), :who, :image, :descriptionmin, :description, :deleted)";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->bindValue(':title', $title, PDO::PARAM_STR);
             $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+            $stmt->bindValue(':descriptionmin', $descriptionmin, PDO::PARAM_STR);
             $stmt->bindValue(':who', "admin", PDO::PARAM_STR);
             $stmt->bindValue(':image', $image, PDO::PARAM_STR);
             $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
 
             if ($stmt->execute()) {
-                return true;
+                return $last_insert_id = $this->conn->lastInsertId();
+               // return true;
             } else {
-                return false;
+
+                return 0;
             }
         }catch(PDOException $e){
-            return false;
+            return 0;
         }
     }
 
@@ -105,6 +108,46 @@ class Model
             $stmt->bindValue(':organizer', $organizer, PDO::PARAM_STR);
             $stmt->bindValue(':status', $status, PDO::PARAM_STR);
             $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (PDOException $e){
+            return false;
+        }
+
+    }
+
+    public function resultsRegatta($id, $newsid)
+    {
+        try {
+            $sql = "UPDATE regatta SET results= :newsid WHERE id= :id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':newsid', $newsid, PDO::PARAM_INT);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (PDOException $e){
+            return false;
+        }
+
+    }
+
+    public function notificationRegatta($id, $newsid)
+    {
+        try {
+            $sql = "UPDATE regatta SET notification= :newsid WHERE id= :id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':newsid', $newsid, PDO::PARAM_INT);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
             if ($stmt->execute()) {
