@@ -308,18 +308,26 @@ class Model
     }
 
     public function getUser($login, $password) {
-        $sql = "SELECT * FROM users WHERE name = :login AND password = :password";
+        $sql = "SELECT * FROM users WHERE name = :login";
 
         $stmt = $this->conn->prepare( $sql );
         $stmt->bindValue(':login', $login, PDO::PARAM_STR);
-        $stmt->bindValue(':password', $password, PDO::PARAM_STR);
         $stmt->execute();
 
-        if($stmt->rowCount() >0){
+        $data = $stmt->fetchAll();
+
+        $salt ="";
+        $hash = "";
+        foreach($data as $row) {
+            $salt = $row['salt'];
+            $hash = $row['password'];
+        }
+        if( $hash === hash('sha256', ($password.$salt)) ){
             return true;
-        }else {
+        }else{
             return false;
         }
+
     }
 
     public static function getInstance()

@@ -1,5 +1,6 @@
 <?php
 
+echo hash('sha256', ("Pogoria49er"."fe7adf7a19302848ee95855067b4dc03eda03e78617456dad17d5fa706792119"));
 
 
         include 'model.php';
