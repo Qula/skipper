@@ -90,7 +90,7 @@
                     <img class="img-responsive" src="pic/mapa.JPG">
                 </div>
                 <div class="back">
-                    <img class="img-responsive" id="map-load" src="pic/load.gif">
+                    <img class="img-responsive hidden" id="map-load" src="pic/load.gif">
                     <iframe class="embed-responsive-item" frameborder="0"></iframe>
                 </div>
             </div>

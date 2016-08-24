@@ -1,8 +1,4 @@
 $(function() {
-
-
-    console.log("Kasy");
-
     var malaPlus = {
         nazwa: "Mała Plus",
         zdjecia: [

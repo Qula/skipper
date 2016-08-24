@@ -49,6 +49,32 @@ class Model
         }
     }
 
+    public function saveDataGallery($title, $description, $descriptionmin, $image, $galleryurl, $deleted)
+    {
+        try {
+            $sql = "INSERT INTO news (title, date, who, image, textmin, text, galleryurl, deleted) VALUES (:title, CURDATE(), :who, :image, :descriptionmin, :description, :galleryurl, :deleted)";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+            $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+            $stmt->bindValue(':descriptionmin', $descriptionmin, PDO::PARAM_STR);
+            $stmt->bindValue(':who', "admin", PDO::PARAM_STR);
+            $stmt->bindValue(':image', $image, PDO::PARAM_STR);
+            $stmt->bindValue(':galleryurl', $galleryurl, PDO::PARAM_STR);
+            $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+
+            if ($stmt->execute()) {
+                return $last_insert_id = $this->conn->lastInsertId();
+                // return true;
+            } else {
+
+                return 0;
+            }
+        }catch(PDOException $e){
+            return 0;
+        }
+    }
+
     public function saveRegatta($name, $type, $date, $organizer, $status, $deleted)
     {
         try {
@@ -161,6 +187,26 @@ class Model
 
     }
 
+    public function galleryRegatta($id, $newsid)
+    {
+        try {
+            $sql = "UPDATE regatta SET gallery= :newsid WHERE id= :id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':newsid', $newsid, PDO::PARAM_INT);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (PDOException $e){
+            return false;
+        }
+
+    }
+
     public function getPost($id)
     {
         $sql = "SELECT * FROM news WHERE id='$id' AND deleted = 0";
@@ -222,6 +268,16 @@ class Model
     public function getRegatta()
     {
         $sql = "SELECT * FROM regatta WHERE deleted = 0 ORDER BY date ASC";
+
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->execute();
+
+        return $stmt;//->fetchAll(PDO::FETCH_ASSOC);;
+    }
+
+    public function getGallery()
+    {
+        $sql = "SELECT regatta.name, news.galleryurl FROM news, regatta WHERE news.deleted = 0 AND news.galleryurl !='' AND news.id = regatta.gallery ORDER BY news.date ASC";
 
         $stmt = $this->conn->prepare( $sql );
         $stmt->execute();

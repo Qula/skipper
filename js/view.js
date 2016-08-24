@@ -1,4 +1,3 @@
-console.log('Testing console');
 
 $(".head-desc").hover(function() {
     $(this).children().stop().animate({"backgroundColor":"#193d5b"},200);
@@ -81,13 +80,22 @@ function isScrolledIntoView(elem) {
 }
 
 $(document).ready(function() {
-    $('a[href="' + this.location.pathname + '"]').parent().addClass('active'); // bootstrap navbar active
+    console.log(this.location.pathname);
+    var pathname = this.location.pathname;
+    if(pathname == "/skipper/sklep.php" || pathname == "/skipper/kasy.php"){
+        $('a[href="/skipper/sklep.php"]').parent().addClass('active'); // bootstrap navbar active
+    }else{
+        $('a[href="/skipper/zeglarstwo.php"]').parent().addClass('active'); // bootstrap navbar active
+    }
+
 
     var $recaptcha = document.querySelector('#g-recaptcha');
 
     if($recaptcha) {
         $recaptcha.setAttribute("required", "required");
     }
+
+    $('#map-load').removeClass('hidden');
 
 });
 
@@ -145,9 +153,12 @@ $(document).ready(function() {
     var docHeight = $(window).height();
     var footerHeight = $('#footer').outerHeight();
     var footerTop = $('#footer').position().top + footerHeight;
-    console.log( footerTop);
+
     if (footerTop < docHeight) {
         $('#footer').css('margin-top',  (docHeight - footerTop) + footerHeight -2 + 'px');
-        console.log( (docHeight - footerTop)+footerHeight);
+
     }
+
+
 });
+

@@ -11,12 +11,14 @@
                 </a>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
+            <a href="galeria.php">
             <div class="head-desc">
                 <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Galeria zdjęć i filmów</p>
                 </div>
             </div>
+            </a>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
             <a href="sezon.php">
@@ -51,13 +53,13 @@
             </a>
         </div>
 
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="head-desc">
-<!--                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">-->
-                <div class="head-name">
-                    <p>Najbliższe regaty</p>
-                </div>
-            </div>
-        </div>
+<!--        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">-->
+<!--            <div class="head-desc">-->
+<!--<!--                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">-->
+<!--                <div class="head-name">-->
+<!--                    <p>Najbliższe regaty</p>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
 
     </div>

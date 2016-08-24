@@ -34,7 +34,7 @@
 }
 .post-title{
     color: rgb(51, 122, 183);
-    font-size: 1.75em;
+    font-size: 1.55em;
     margin-top: 20px;
 }
 .post-date{
@@ -258,4 +258,8 @@ tr :first-child {
 }
 .regaty-img {
     max-height: 400px;
+}
+
+.video div {
+    margin-bottom: 10px;
 }

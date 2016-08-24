@@ -8,17 +8,21 @@ $(".pic-select").change(function (){
     var selected = $(".pic-select").val();
     if(selected === "zawiadomienie"){
         $(".zawiadomienie").remove();
-        //$(".pic-select").after("" +
+        $(".pic-select").after("" +
         //    "<h5 class='zawiadomienie'>Opis do zawiadomienia (opcjonalnie):</h5>" +
         //    "<textarea id='zawiadomienie-opis' class='form-control zawiadomienie' rows='1' name='zawiadomienie-opis'></textarea>" +
-        //    "<h5 class='zawiadomienie'>Link do zawiadomienia:</h5>" +
-        //    "<textarea id='zawiadomienie-link' class='form-control zawiadomienie' rows='1' name='zawiadomienie-link' placeholder='zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea> ");
+            "<h5 class='zawiadomienie'>Link do zawiadomienia:</h5>" +
+            "<textarea class='form-control zawiadomieniea dd-url' rows='1' name='add-url' placeholder='zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea> ");
         getRegattaListAd();
     }else if(selected == "wyniki"){
         $(".zawiadomienie").remove();
         getRegattaListAd();
     }else if(selected === "galeria"){
         $(".zawiadomienie").remove();
+        $(".pic-select").after("" +
+            "<h5 class='zawiadomienie'>Link do galerii:</h5>" +
+            "<textarea class='form-control zawiadomienie add-url' rows='1' name='add-url' placeholder='galeria/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea> ");
+
         getRegattaListAd();
     }else if(selected === "inne"){
         $(".zawiadomienie").remove();
@@ -100,9 +104,10 @@ function saveData(){
     var deleted = $(".view-select").val();
     var regatta = $(".regaty-select").val();
     var descriptionmin = $('#tekstmin').val();
+    var url = $(".add-url").val();
 
 
-    var dataString = 'action=saveData&title=' + title + '&text=' + description + '&textmin=' + descriptionmin + '&image=' + image + '&deleted=' + deleted + '&rid=' + regatta;
+    var dataString = 'action=saveData&title=' + title + '&text=' + description + '&textmin=' + descriptionmin + '&image=' + image + '&deleted=' + deleted + '&rid=' + regatta + "&url=" + url;
     console.log(dataString);
     $.ajax({
         type: "POST",

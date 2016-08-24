@@ -26,7 +26,8 @@
     <script src="js/script.js"></script>
     <script src="js/view.js"></script>
     <script src="js/ajax-mail.js"></script>
-
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/gallery.js"></script>
     <script src="js/kasy.js"></script>
 
 

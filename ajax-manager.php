@@ -9,8 +9,21 @@ if(!empty($_POST['action'])){
         $textmin = $_POST['textmin'];
         $img = 'pic/news/'.$_POST['image'].'.jpg';
         $deleted = $_POST['deleted'];
+        $ans = false;
+        if(!empty($_POST['url'])){
+            $url = $_POST['url'];
+            switch($_POST['image']){
+                case 'zawiadomienie':
+                    $ans = $model->saveData($title, $text, $textmin, $img, $deleted);
+                    break;
+                case 'galeria':
+                    $ans = $model->saveDataGallery($title, $text, $textmin, $img, $url, $deleted);
+                    break;
+            }
+        }else{
+            $ans = $model->saveData($title, $text, $textmin, $img, $deleted);
+        }
 
-        $ans = $model->saveData($title, $textmin, $text, $img, $deleted);
         $ansreg = true;;
         if(!empty($_POST['rid'])){
             $rid = $_POST['rid'];
@@ -22,6 +35,7 @@ if(!empty($_POST['action'])){
                     $ansreg = $model->resultsRegatta($rid, $ans);
                     break;
                 case 'galeria':
+                    $ansreg = $model->galleryRegatta($rid,$ans);
                     break;
             }
         }else{

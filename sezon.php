@@ -34,7 +34,7 @@
                                 <div class="row">
                                     <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['notification']) {echo '<a href="post.php?id='.$row['notification'].'" target="_blank">Zawiadomienie</a>';} ?></span></div>
                                     <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['results']) {echo '<a href="post.php?id='.$row['results'].'" target="_blank">Wyniki</a>';} ?></span></div>
-                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['gallery']) {echo $row['gallery']; }?></span></div>
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['gallery']) {echo '<a href="post.php?id='.$row['gallery'].'" target="_blank">Galeria</a>';} ?></span></div>
                                 </div>
                             </div>
                         </div>
