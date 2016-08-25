@@ -13,8 +13,8 @@
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#kasydrukarki">
             <div class="head-desc">
                 <img src="pic/kasydrukarki.jpg" class="img-responsive" alt="">
-                <div class="head-name">
-                    <p>Kasy i&nbspdrukarki</p>
+                <div class="head-name specialkasy">
+                    <p>Kasy i&nbspdrukarki fiskalne</p>
                 </div>
             </div>
         </div>
@@ -64,9 +64,9 @@
     <h1 id="onas">O nas</h1>
     <div class="row">
         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-            <p>Od ponad X lat specjalizujemy się w... coś tam dalej</p>
-            <p>Jeszcze wiecej</p>
-            <p>i jeszcze!</p>
+            <p>Nasza firma prowadzi działalność od 1991 roku. Przez minione lata wypracowaliśmy sobie mocną pozycję na rynku komputerowym w Nowym Śączu.</p>
+            <p>Zajmujemy się sprzedażą sprzętu komputerowego, oprogramowania oraz kas i drukarek fiskalnych.</p>
+
             <h3>Adres: </h3>
             <address>
                 <strong>SKIPPER - Paweł Butscher</strong>
@@ -91,7 +91,9 @@
                 </div>
                 <div class="back">
                     <img class="img-responsive hidden" id="map-load" src="pic/load.gif">
-                    <iframe class="embed-responsive-item" frameborder="0"></iframe>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" frameborder="0"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,16 +110,16 @@
         <div class="col-xs-12" >
             W ofercie posiadamy kasy oraz drukarki fiskalne. Więcej szczegółow po wybraniu kategorii:
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center" id="kasy">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center kasy">
             <a href="kasy.php">
                 <span>Kasy fiskalne</span>
-                <img src="pic/kasy_fiskalne.jpg" class="img-responsive center-block">
+                <img src="pic/kasy_fiskalne.jpg" class="img-responsive center-block kasyimg">
             </a>
         </div>
-        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center" id="kasy">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center kasy">
             <a href="#">
                 <span>Drukarki fiskalne</span>
-                <img src="pic/drukarki_fiskalne.jpg" class="img-responsive center-block">
+                <img src="pic/drukarki_fiskalne.jpg" class="img-responsive center-block kasyimg">
             </a>
         </div>
     </div>
@@ -213,28 +215,28 @@
         <span class="col-sm-12">W ofercie posiadamy oprogramowania Aktyn przeznaczone dla firm. Dodatkowe informacje po wybraniu oprogramowania.</span>
         <div class="aktyn">
             <div class="col-md-4 col-sm-4 col-xs-6" id="asprzedaz" data-name="aktyn-sprzedaz">
-                <div class="front"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i> Aktyn System Sprzedaży</span></div>
-                <div class="back"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i><strong> Aktyn System Sprzedaży</strong></span></div>
+                <div class="front"><span class="hand"><i class="glyphicon glyphicon-plus"></i> Aktyn System Sprzedaży</span></div>
+                <div class="back"><span class="hand"><i class="glyphicon glyphicon-minus"></i><strong> Aktyn System Sprzedaży</strong></span></div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-6" id="afinanse" data-name="aktyn-finanse">
-                <div class="front"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i> Aktyn Finanse - Księgowość</span></div>
-                <div class="back"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i><strong> Aktyn Finanse - Księgowość</strong></span></div>
+                <div class="front"><span class="hand"><i class="glyphicon glyphicon-plus"></i> Aktyn Finanse - Księgowość</span></div>
+                <div class="back"><span class="hand"><i class="glyphicon glyphicon-minus"></i><strong> Aktyn Finanse - Księgowość</strong></span></div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-6" id="aplace" data-name="aktyn-place">
-                <div class="front"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i> Aktyn Płace - Kadry</span></div>
-                <div class="back"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i><strong> Aktyn Płace - Kadry</strong></span></div>
+                <div class="front"><span class="hand"><i class="glyphicon glyphicon-plus"></i> Aktyn Płace - Kadry</span></div>
+                <div class="back"><span class="hand"><i class="glyphicon glyphicon-minus"></i><strong> Aktyn Płace - Kadry</strong></span></div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-6" id="asrodki" data-name="aktyn-srodki">
-                <div class="front"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i> Aktyn Środki Trwałe</span></div>
-                <div class="back"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i><strong> Aktyn Środki Trwałe</strong></span></div>
+                <div class="front"><span class="hand"><i class="glyphicon glyphicon-plus"></i> Aktyn Środki Trwałe</span></div>
+                <div class="back"><span class="hand"><i class="glyphicon glyphicon-minus"></i><strong> Aktyn Środki Trwałe</strong></span></div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-6" id="aksiega" data-name="aktyn-ksiega">
-                <div class="front"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i> Aktyn Księga Przychodów i Rozchodów</span></div>
-                <div class="back"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i><strong> Aktyn Księga Przychodów i Rozchodów</strong></span></div>
+                <div class="front"><span class="hand"><i class="glyphicon glyphicon-plus"></i> Aktyn Księga Przychodów i Rozchodów</span></div>
+                <div class="back"><span class="hand"><i class="glyphicon glyphicon-minus"></i><strong> Aktyn Księga Przychodów i Rozchodów</strong></span></div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-6" id="acennik" data-name="aktyn-cennik">
-                <div class="front"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i> Aktyn Cennik</span></div>
-                <div class="back"><span class="hand"><i class="glyphicon glyphicon-chevron-right"></i><strong> Aktyn Cennik</strong></span></div>
+                <div class="front"><span class="hand"><i class="glyphicon glyphicon-plus"></i> Aktyn Cennik</span></div>
+                <div class="back"><span class="hand"><i class="glyphicon glyphicon-minus"></i><strong> Aktyn Cennik</strong></span></div>
             </div>
         </div>
 
@@ -345,7 +347,7 @@
                 </span>
             </div>
             <div class="aktyn-cennik hidden">
-                Cennik w formacie PDF:
+                Cennik w formacie PDF: <a href="downloads/CennikAktyn.pdf" target="_blank">Aktyn cennik</a>
             </div>
         </div>
     </div>
@@ -362,7 +364,7 @@
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12" id="terminale-line">
             <h4>Pozwalają na:</h4>
             <ul class="custom-bullet list-unstyled ">
-                <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż i dystrybucję doładowań do przedpłacanych kont sieci GSM poprzez terminale (w trybie off-line) oraz Internet</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż i dystrybucję doładowań do przedpłacanych kont sieci GSM poprzez terminale (w&nbsptrybie off-line) oraz Internet</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż produktów operatorów telekomunikacyjnych VoIP</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Obsługę płatności masowych (rachunki za telefon, wodę, prąd, gaz itp.)</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Obsługę kartowych transakcji płatniczych (VISA, VISA ELECTRON, MasterCard, MasterCard Electronic, Maestro)</li>

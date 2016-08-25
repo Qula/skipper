@@ -5,25 +5,22 @@
 
     <h4>Wybierz kase:</h4>
     <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="col-md-12 head-desc" data-kasa="malaPlus">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" >
+            <div class="head-desc" data-kasa="malaPlus">
                 <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Mała Plus</p>
                 </div>
             </div>
         </div>
-
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
-            <div class="col-md-12 head-desc"  data-kasa="lupo">
+            <div class="head-desc" data-kasa="lupo">
                 <img src="kdpic/Lupo_1.JPG" class="img-responsive" alt="">
                 <div class="head-name">
-                    <p>LUPO</p>
+                    <p>Lupo</p>
                 </div>
             </div>
         </div>
-
-
     </div>
     <hr>
     <div class="row opis-kas">
@@ -52,6 +49,7 @@
             <h3 id="kDane">Dane techniczne: </h3>
         </div>
     </div>
+
 
 
 

@@ -13,8 +13,8 @@
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
             <a href="galeria.php">
             <div class="head-desc">
-                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
-                <div class="head-name">
+                <img src="pic/galeria.jpg" class="img-responsive" alt="">
+                <div class="head-name specialkasy">
                     <p>Galeria zdjęć i filmów</p>
                 </div>
             </div>
@@ -23,7 +23,7 @@
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
             <a href="sezon.php">
             <div class="head-desc">
-                <img src="kdpic/Mala_Plus.jpg" class="img-responsive" alt="">
+                <img src="pic/sezon.jpg" class="img-responsive" alt="" id="sezon">
                 <div class="head-name">
                     <p>SEZON 2016</p>
                 </div>
@@ -45,7 +45,7 @@
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
             <a href="zeglarstwo.php">
             <div class="head-desc"  data-kasa="lupo">
-                <img src="kdpic/Lupo_1.JPG" class="img-responsive" alt="">
+                <img src="pic/aktualnosci.jpg" class="img-responsive" alt="">
                 <div class="head-name">
                     <p>Aktualności</p>
                 </div>

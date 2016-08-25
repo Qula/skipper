@@ -11,31 +11,31 @@
             <span>Paweł Butscher</span><span> - sternik </span>
         </div>
         <div class="col-md-5">
-            <img class="img-circle img-responsive center-block" src="https://placehold.it/200x180">
+            <img class="img-circle img-responsive center-block" src="pic/pawelbutscher.jpg">
         </div>
     </div>
     <div class="row">
         <div class="col-md-7 funkcja">
-            <span>Alicja Butscher</span><span> - trymer foka </span><a href=""><img src="pic/facebook-icon.png"></a>
+            <span>Alicja Butscher</span><span> - trymer foka </span><a href="https://www.facebook.com/alicja.butscher" target="_blank"><img src="pic/facebook-icon.png"></a>
         </div>
         <div class="col-md-5">
-            <img class="img-circle img-responsive center-block" src="https://placehold.it/200x180">
+            <img class="img-circle img-responsive center-block" src="pic/alicjabutscher.jpg">
         </div>
     </div>
     <div class="row">
         <div class="col-md-7 funkcja">
-            <span>Joanna Kula</span><span> - trymer foka, trymer genakera </span><a href=""><img src="pic/facebook-icon.png"></a>
+            <span>Joanna Kula</span><span> - trymer foka, trymer genakera </span><a href="https://www.facebook.com/joanna.kula.988" target="_blank"><img src="pic/facebook-icon.png"></a>
         </div>
         <div class="col-md-5">
-            <img class="img-circle img-responsive center-block" src="https://placehold.it/200x180">
+            <img class="img-circle img-responsive center-block" src="pic/joannakula.jpg">
         </div>
     </div>
     <div class="row">
         <div class="col-md-7 funkcja">
-            <span>Marcin Kula</span><span> - trymer grota</span><a href=""><img src="pic/facebook-icon.png"></a><a href=""><img src="pic/instagram-icon.png"></a>
+            <span>Marcin Kula</span><span> - trymer grota</span><a href="https://www.facebook.com/Qulaa" target="_blank"><img src="pic/facebook-icon.png"></a><a href="https://www.instagram.com/qulaa/" target="_blank"><img src="pic/instagram-icon.png"></a>
         </div>
         <div class="col-md-5">
-            <img class="img-circle img-responsive center-block" src="https://placehold.it/200x180">
+            <img class="img-circle img-responsive center-block" src="pic/marcinkula.jpg">
         </div>
     </div>
 

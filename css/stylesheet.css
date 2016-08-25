@@ -77,6 +77,15 @@
     }
 }
 
+@media screen and (max-width: 992px){
+    .specialkasy {
+        line-height: normal;
+    }
+    .specialkasy p {
+        margin-top: 5%;
+    }
+}
+
 .grey {
     background-color: #F4F4F4;
 }
@@ -114,17 +123,6 @@ hr {
         margin-bottom: 20px;
         margin-top: 20px;
     }
-}
-.screen{
-    /*display: inline-flex;*/
-}
-
-#onas {
-    /*padding-left: 20px;*/
-}
-
-#sp {
-    /*visibility: hidden;*/
 }
 
 .scrollToTop {
@@ -170,7 +168,7 @@ footer > .navbar {
 }
 
 .before-card {
-    height: 230px;
+    /*height: 300px;*/
 }
 #map-load {
     margin-top: 90px;
@@ -199,15 +197,28 @@ footer > .navbar {
     .aktyn div {
         height: 60px;
     }
+    .before-card {
+        height: 280px;
+    }
+}
+@media screen and (max-width: 400px) {
+    .before-card {
+        height: 200px;
+    }
 }
 
 
-#kasy {
+.kasy {
     margin-top: 20px;
     font-size: 20px;
+
 }
-#kasy a {
+.kasy a {
     text-decoration: none;
+
+}
+.kasyimg {
+    max-height: 350px;
 }
 
 .funkcja {
@@ -241,6 +252,9 @@ footer > .navbar {
 .funkcja :first-child {
         font-size: 30px;
     }
+    #sezon {
+        height: auto;
+    }
 }
 
 tr :first-child {
@@ -262,4 +276,8 @@ tr :first-child {
 
 .video div {
     margin-bottom: 10px;
+}
+
+#sezon {
+    height: 100%;
 }
