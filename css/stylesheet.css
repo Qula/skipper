@@ -108,7 +108,6 @@ hr {
     color: rgb(51, 122, 183);
     background-color: rgb(51, 122, 183);
     height: 2px;
-    /*margin-top: 40px;*/
 }
 
 @media screen and (min-width: 768px) {
@@ -167,9 +166,6 @@ footer > .navbar {
     }
 }
 
-.before-card {
-    /*height: 300px;*/
-}
 #map-load {
     margin-top: 90px;
 }
@@ -280,4 +276,8 @@ tr :first-child {
 
 #sezon {
     height: 100%;
+}
+
+.backbtn {
+    margin-top: 20px;
 }

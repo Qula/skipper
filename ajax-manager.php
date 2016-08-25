@@ -10,11 +10,11 @@ if(!empty($_POST['action'])){
         $img = 'pic/news/'.$_POST['image'].'.jpg';
         $deleted = $_POST['deleted'];
         $ans = false;
-        if(!empty($_POST['url'])){
+        if(!empty($_POST['url']) && $_POST['url'] != 'undefined'){
             $url = $_POST['url'];
             switch($_POST['image']){
                 case 'zawiadomienie':
-                    $ans = $model->saveData($title, $text, $textmin, $img, $deleted);
+                    $ans = $model->saveDataNotification($title, $text, $textmin, $img, $url, $deleted);
                     break;
                 case 'galeria':
                     $ans = $model->saveDataGallery($title, $text, $textmin, $img, $url, $deleted);
@@ -23,9 +23,8 @@ if(!empty($_POST['action'])){
         }else{
             $ans = $model->saveData($title, $text, $textmin, $img, $deleted);
         }
-
         $ansreg = true;;
-        if(!empty($_POST['rid'])){
+        if(!empty($_POST['rid']) && $_POST['rid'] != 'undefined' ){
             $rid = $_POST['rid'];
             switch($_POST['image']){
                 case 'zawiadomienie':
@@ -38,10 +37,7 @@ if(!empty($_POST['action'])){
                     $ansreg = $model->galleryRegatta($rid,$ans);
                     break;
             }
-        }else{
-
         }
-
         if($ans && $ansreg){
             echo json_encode(array("Zapisano wpis."));
         }else{
@@ -65,10 +61,27 @@ if(!empty($_POST['action'])){
     if($_POST['action'] == 'saveAsData'){
         $title = $_POST['title'];
         $text = $_POST['text'];
+        $textmin = $_POST['textmin'];
         $img = 'pic/news/'.$_POST['image'].'.jpg';
         $id = $_POST['id'];
         $deleted = $_POST['deleted'];
-        $ans = $model->saveAsData($title, $text, $img, $id, $deleted);
+        $ans = false;
+        if(!empty($_POST['url']) && $_POST['url'] != 'undefined'){
+            $url = $_POST['url'];
+            switch($_POST['image']){
+                case 'zawiadomienie':
+                    // saveas dla zawiadomienia $ans = $model->saveData($title, $text, $textmin, $img, $deleted);
+                    $ans = $model->saveAsDataNotification($title, $text, $textmin, $img, $id, $url, $deleted);
+
+                    break;
+                case 'galeria':
+                    $ans = $model->saveAsDataGallery($title, $text, $textmin, $img, $id, $url, $deleted);
+                    break;
+            }
+        }else{
+            $ans = $model->saveAsData($title, $text, $textmin, $img, $id, $deleted);
+        }
+
         if($ans){
             echo json_encode(array("Zapisano wpis."));
         }else{

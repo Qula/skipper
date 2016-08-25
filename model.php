@@ -75,6 +75,32 @@ class Model
         }
     }
 
+    public function saveDataNotification($title, $description, $descriptionmin, $image, $notificationurl, $deleted)
+    {
+        try {
+            $sql = "INSERT INTO news (title, date, who, image, textmin, text, notificationurl, deleted) VALUES (:title, CURDATE(), :who, :image, :descriptionmin, :description, :notificationurl, :deleted)";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+            $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+            $stmt->bindValue(':descriptionmin', $descriptionmin, PDO::PARAM_STR);
+            $stmt->bindValue(':who', "admin", PDO::PARAM_STR);
+            $stmt->bindValue(':image', $image, PDO::PARAM_STR);
+            $stmt->bindValue(':notificationurl', $notificationurl, PDO::PARAM_STR);
+            $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+
+            if ($stmt->execute()) {
+                return $last_insert_id = $this->conn->lastInsertId();
+                // return true;
+            } else {
+
+                return 0;
+            }
+        }catch(PDOException $e){
+            return 0;
+        }
+    }
+
     public function saveRegatta($name, $type, $date, $organizer, $status, $deleted)
     {
         try {
@@ -98,17 +124,70 @@ class Model
         }
     }
 
-    public function saveAsData($title, $description, $image, $id, $deleted)
+    public function saveAsData($title, $description, $descriptionmin, $image, $id, $deleted)
     {
         try {
-            $sql = "UPDATE news SET title= :title, text= :description, who= :who, image= :image, deleted= :deleted WHERE id= :id";
+            $sql = "UPDATE news SET title= :title, text= :description, textmin= :descriptionmin, who= :who, image= :image, deleted= :deleted WHERE id= :id";
 
             $stmt = $this->conn->prepare($sql);
             $stmt->bindValue(':title', $title, PDO::PARAM_STR);
             $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+            $stmt->bindValue(':descriptionmin', $descriptionmin, PDO::PARAM_STR);
             $stmt->bindValue(':who', "admin", PDO::PARAM_STR);
             $stmt->bindValue(':image', $image, PDO::PARAM_STR);
             $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (PDOException $e){
+            return false;
+        }
+
+    }
+
+    public function saveAsDataGallery($title, $description, $descriptionmin, $image, $id, $galleryurl, $deleted)
+    {
+        try {
+            $sql = "UPDATE news SET title= :title, text= :description, textmin= :descriptionmin, who= :who, image= :image, galleryurl= :galleryurl, deleted= :deleted WHERE id= :id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+            $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+            $stmt->bindValue(':descriptionmin', $descriptionmin, PDO::PARAM_STR);
+            $stmt->bindValue(':who', "admin", PDO::PARAM_STR);
+            $stmt->bindValue(':image', $image, PDO::PARAM_STR);
+            $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+            $stmt->bindValue(':galleryurl', $galleryurl, PDO::PARAM_STR);
+            $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+
+            if ($stmt->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        }catch (PDOException $e){
+            return false;
+        }
+
+    }
+
+    public function saveAsDataNotification($title, $description, $descriptionmin, $image, $id, $notificationurl, $deleted)
+    {
+        try {
+            $sql = "UPDATE news SET title= :title, text= :description, textmin= :descriptionmin, who= :who, image= :image, notificationurl= :notificationurl, deleted= :deleted WHERE id= :id";
+
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bindValue(':title', $title, PDO::PARAM_STR);
+            $stmt->bindValue(':description', $description, PDO::PARAM_STR);
+            $stmt->bindValue(':descriptionmin', $descriptionmin, PDO::PARAM_STR);
+            $stmt->bindValue(':who', "admin", PDO::PARAM_STR);
+            $stmt->bindValue(':image', $image, PDO::PARAM_STR);
+            $stmt->bindValue(':deleted', $deleted, PDO::PARAM_STR);
+            $stmt->bindValue(':notificationurl', $notificationurl, PDO::PARAM_STR);
             $stmt->bindValue(':id', $id, PDO::PARAM_INT);
 
             if ($stmt->execute()) {
@@ -287,7 +366,7 @@ class Model
 
     public function getAllPosts()
     {
-        $sql = "SELECT * FROM news ORDER BY id DESC";
+        $sql = "SELECT * FROM news ORDER BY id DESC LIMIT 15";
 
         $stmt = $this->conn->prepare( $sql );
         $stmt->execute();

@@ -12,7 +12,7 @@ $(".pic-select").change(function (){
         //    "<h5 class='zawiadomienie'>Opis do zawiadomienia (opcjonalnie):</h5>" +
         //    "<textarea id='zawiadomienie-opis' class='form-control zawiadomienie' rows='1' name='zawiadomienie-opis'></textarea>" +
             "<h5 class='zawiadomienie'>Link do zawiadomienia:</h5>" +
-            "<textarea class='form-control zawiadomieniea dd-url' rows='1' name='add-url' placeholder='zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea> ");
+            "<textarea class='form-control zawiadomieniea add-url' rows='1' name='add-url' placeholder='zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea> ");
         getRegattaListAd();
     }else if(selected == "wyniki"){
         $(".zawiadomienie").remove();
@@ -21,7 +21,7 @@ $(".pic-select").change(function (){
         $(".zawiadomienie").remove();
         $(".pic-select").after("" +
             "<h5 class='zawiadomienie'>Link do galerii:</h5>" +
-            "<textarea class='form-control zawiadomienie add-url' rows='1' name='add-url' placeholder='galeria/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea> ");
+            "<textarea class='form-control zawiadomienie add-url' rows='1' name='add-url' placeholder='galeria/Puchar Wojta Gminy Grodek nad Dunajcem/' required></textarea> ");
 
         getRegattaListAd();
     }else if(selected === "inne"){
@@ -37,7 +37,7 @@ function getRegattaListAd() {
         cache: false,
         success: function(result) {
             var resultGet = JSON.parse(result);
-            var html = '<h5 class="zawiadomienie">Regaty:</h5><select name="regaty" class="regaty-select zawiadomienie">';
+            var html = '<h5 class="zawiadomienie">Regaty:</h5><select name="regaty" class="regaty-select zawiadomienie" required>';
             for (var i = 0; i < resultGet.length; i++) {
                 html += '<option value="'+ resultGet[i]['id'] +'">'+resultGet[i]['name']+'</option>';
             }
@@ -147,11 +147,11 @@ function saveAsData(){
     var title = $("#tytul").val();
     var description = $("#tekst").val();
     var image = $(".pic-select").val();
-    console.log(image);
     var id = getUrlVars()["id"];
+    var descriptionmin = $('#tekstmin').val();
+    var url = $(".add-url").val();
     var deleted = $(".view-select").val();
-    console.log(deleted);
-    var dataString = 'action=saveAsData&title=' + title + '&text=' + description + '&image=' + image + '&id=' + id + '&deleted=' + deleted;
+    var dataString = 'action=saveAsData&title=' + title + '&text=' + description + '&textmin=' + descriptionmin + '&image=' + image + '&id=' + id + '&deleted=' + deleted + "&url=" + url;
     $.ajax({
         type: "POST",
         url: "ajax-manager.php",

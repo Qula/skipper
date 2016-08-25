@@ -20,7 +20,15 @@
                     <br>
                     <div><?php echo $result['text']?></div>
                     <br>
-                    <a class="btn btn-primary" onclick="goBack()">Wróć </a>
+                    <?php if($result['notificationurl'] !=''){?>
+                        <a href="<?php echo $result['notificationurl']; ?>" class="popup-img"><img src="<?php echo $result['notificationurl']; ?>" class="img-responsive center-block"></a>
+                    <?php }else if($result['galleryurl'] !=''){ ?>
+
+                    <button class="btn btn-default btn-lg galbut col-xs-12" data-url="<?php echo $result['galleryurl'];?>">Wyświetl galerię</button>
+
+                    <?php }?>
+
+                    <br><a class="btn btn-primary backbtn " onclick="goBack()">Wróć </a>
                 </div>
             <?php
             }else{?>

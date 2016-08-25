@@ -23,9 +23,22 @@ include 'admin-header.php';
                 <option value="galeria" <?php if($result['image'] == 'pic/news/galeria.jpg') {echo 'selected';} ?>>Galeria</option>
                 <option value="inne" <?php if($result['image'] == 'pic/news/inne.jpg') {echo 'selected';} ?>>Inne</option>
             </select>
+            <?php if($result['galleryurl'] != ''){
+                ?>
+                    <h5 class='zawiadomienie'>Link do galerii:</h5>
+                    <textarea class='form-control zawiadomienie add-url' rows='1' name='add-url' placeholder='galeria/Puchar Wojta Gminy Grodek nad Dunajcem/' required><?php echo $result['galleryurl'] ?></textarea><?php
+                }?>
+                <?php if($result['notificationurl'] != ''){
+                    ?>
+                    <h5 class='zawiadomienie'>Link do galerii:</h5>
+                    <textarea class='form-control zawiadomienie add-url' rows='1' name='add-url' placeholder='zawiadomienia/V Regaty o Puchar Gumowego Ryjka.jpg' required><?php echo $result['notificationurl'] ?></textarea><?php
+                }?>
+
             <h5>Tytuł:</h5>
             <textarea id="tytul" class="form-control" rows="1" name="tytul" required><?php echo $result['title'] ?></textarea>
-            <h5>Tekst::</h5>
+            <h5>Tekst wyświetlany na głownej (max 400 znaków):</h5>
+            <textarea id="tekstmin" class="form-control" rows="5" name="tekstmin" required><?php echo $result['textmin'] ?></textarea>
+            <h5>Tekst:</h5>
             <textarea id="tekst" class="form-control" rows="5" name="tekst" required><?php echo $result['text'] ?></textarea>
 
             <h5>Wyświetlaj na głównej stronie:</h5>

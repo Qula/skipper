@@ -14,6 +14,10 @@ $(document).ready(function() {
         // other options
     });
 
+    $('.popup-img').magnificPopup({
+        type: 'image'
+        // other options
+    });
 
 });
 
