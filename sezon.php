@@ -21,7 +21,7 @@
                      ">
                         <div class="panel-heading">
                             <h4 class="panel-title">
-                                <a data-toggle="collapse" href="#collapse<?php echo $count; ?>"><?php echo $row['name'] ?><span class="pull-right">X</span></a>
+                                <a data-toggle="collapse" href="#collapse<?php echo $count; ?>"><?php echo $row['name'] ?><span class="pull-right glyphicon glyphicon-chevron-down"></span></a>
                             </h4>
                         </div>
                         <div id="collapse<?php echo $count; ?>" class="panel-collapse collapse">
@@ -45,6 +45,19 @@
 
 
 
+    </div>
+
+    <h3>Legenda:</h3>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default"><div class="panel-heading">Wstępna rezerwacja terminu regat</div> </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-success"><div class="panel-heading">Regaty potwierdzone</div> </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-warning"><div class="panel-heading">Regaty niepotwierdzone</div> </div>
+        </div>
     </div>
 </div>
 

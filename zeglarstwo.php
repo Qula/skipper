@@ -24,13 +24,14 @@
         </div>
                <?php }?>
         <div id="posts-load"></div>
+    </div>
+
     <div class="row">
-        <div class="col-md-4 col-md-offset-4 col-sm-5 col-sm-offset-3">
+        <div class="col-md-4 col-md-offset-4 col-sm-12">
             <button class="btn btn-primary btn-block " id="show-more" onclick="getMorePosts()" >Pokaż więcej</button>
         </div>
     </div>
 
 
-    </div>
 </div>
 <?php include 'footer.php'?>

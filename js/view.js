@@ -80,7 +80,6 @@ function isScrolledIntoView(elem) {
 }
 
 $(document).ready(function() {
-    console.log(this.location.pathname);
     var pathname = this.location.pathname;
     if(pathname == "/skipper/sklep.php" || pathname == "/skipper/kasy.php"){
         $('a[href="/skipper/sklep.php"]').parent().addClass('active'); // bootstrap navbar active
@@ -96,6 +95,9 @@ $(document).ready(function() {
     }
 
     $('#map-load').removeClass('hidden');
+    $(".back iframe").attr({
+        'src': ''
+    });
 
 });
 
@@ -160,5 +162,9 @@ $(document).ready(function() {
     }
 
 
+});
+
+$('.panel-title .pull-right, .panel-title a').on('click', function(){
+   $(this).find('.pull-right').toggleClass("glyphicon glyphicon-chevron-down glyphicon glyphicon-chevron-up");//removeClass('glyphicon glyphicon-chevron-down').addClass('glyphicon glyphicon-chevron-up');
 });
 

@@ -16,7 +16,7 @@
 <!--    </div>-->
 <!--</div>-->
 
-<span class="scrollToTop" title="Wróc na początek!"><i class="glyphicon glyphicon-arrow-up"></i></span>
+<span class="scrollToTop" title="Wróć na początek!"><i class="glyphicon glyphicon-arrow-up"></i></span>
 
     <script src="bootstrap336/js/jquery-1.12.2.min.js"></script>
     <script src="bootstrap336/js/bootstrap.min.js"></script>
@@ -29,6 +29,11 @@
     <script src="js/jquery.magnific-popup.min.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/kasy.js"></script>
+    <script src="trumbowyg/trumbowyg.min.js"></script>
+    <script src="trumbowyg/pl.min.js"></script>
+    <script src="trumbowyg/trumbowyg.table.js"></script>
+    <script src="js/trumbowyg.js"></script>
+
 
 
 

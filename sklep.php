@@ -91,23 +91,18 @@
                 </div>
                 <div class="back">
                     <img class="img-responsive hidden" id="map-load" src="pic/load.gif">
-                    <div class="embed-responsive embed-responsive-16by9">
+                    <div class="embed-responsive embed-responsive-4by3">
                         <iframe class="embed-responsive-item" frameborder="0"></iframe>
                     </div>
                 </div>
             </div>
         </div>
-<!--        <img class="img-responsive col-lg-6 col-md-6 col-sm-6 col-xs-10" src="http://placehold.it/500x400">-->
-<!--        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-10">-->
-<!--            <iframe class="embed-responsive-item" frameborder="0" src="https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20" width="100%" height="400"></iframe>-->
-<!--        </div>-->
-
     </div>
 
     <hr>
     <h1 id="kasydrukarki">Kasy i drukarki</h1>
     <div class="row">
-        <div class="col-xs-12" >
+        <div class="col-xs-12">
             W ofercie posiadamy kasy oraz drukarki fiskalne. Więcej szczegółow po wybraniu kategorii:
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center kasy">
@@ -129,7 +124,6 @@
     <h1 id="serwis">Serwis</h1>
     <div class="row">
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-
             <h4>Prowadzimy serwis: </h4>
             <ul class="custom-bullet list-unstyled ">
                 <li><i class="glyphicon glyphicon-chevron-right"></i> komputerów stacjonarnych</li>
@@ -141,8 +135,6 @@
                 <li><i class="glyphicon glyphicon-chevron-right"></i> budujemy i konfigurujemy sieci komputerowe</li>
                 <li> oraz wiele innych.</li>
             </ul>
-
-
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
@@ -170,8 +162,6 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
                 <img src="pic/office.jpg" class="img-responsive">
             </div>
-
-
         </div>
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
             <h4>Zajmujemy się sprzedażą, instalacją oraz konfiguracją oprogramowania:</h4>
@@ -189,7 +179,6 @@
     <h1 id="sprzetkomputerowy">Sprzęt komputerowy</h1>
     <div class="row">
         <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-
             <h4>Oferujemy szeroką gamę sprzętu komputerowego i akcesoriów:</h4>
             <ul class="custom-bullet list-unstyled ">
                 <li><i class="glyphicon glyphicon-chevron-right"></i> komputery stacjonarne</li>
@@ -213,12 +202,12 @@
     <h1 id="oprogramowaniedlafirm">Oprogramowanie dla firm</h1>
     <div class="row">
         <span class="col-sm-12">W ofercie posiadamy oprogramowania Aktyn przeznaczone dla firm. Dodatkowe informacje po wybraniu oprogramowania.</span>
-        <div class="aktyn">
-            <div class="col-md-4 col-sm-4 col-xs-6" id="asprzedaz" data-name="aktyn-sprzedaz">
+        <div class="aktyn col-sm-12">
+            <div class="col-sm-4 col-xs-6" id="asprzedaz" data-name="aktyn-sprzedaz">
                 <div class="front"><span class="hand"><i class="glyphicon glyphicon-plus"></i> Aktyn System Sprzedaży</span></div>
                 <div class="back"><span class="hand"><i class="glyphicon glyphicon-minus"></i><strong> Aktyn System Sprzedaży</strong></span></div>
             </div>
-            <div class="col-md-4 col-sm-4 col-xs-6" id="afinanse" data-name="aktyn-finanse">
+            <div class="col-sm-4 col-xs-6" id="afinanse" data-name="aktyn-finanse">
                 <div class="front"><span class="hand"><i class="glyphicon glyphicon-plus"></i> Aktyn Finanse - Księgowość</span></div>
                 <div class="back"><span class="hand"><i class="glyphicon glyphicon-minus"></i><strong> Aktyn Finanse - Księgowość</strong></span></div>
             </div>
@@ -239,8 +228,6 @@
                 <div class="back"><span class="hand"><i class="glyphicon glyphicon-minus"></i><strong> Aktyn Cennik</strong></span></div>
             </div>
         </div>
-
-
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="aktyn-sprzedaz hidden">
                 <span class="opis">
@@ -352,7 +339,6 @@
         </div>
     </div>
 
-
     <hr>
     <h1 id="terminale">Terminale płatnicze</h1>
     <div class="row">
@@ -371,7 +357,6 @@
             </ul>
         </div>
     </div>
-
 
     <hr>
     <script src='https://www.google.com/recaptcha/api.js'></script>
@@ -440,22 +425,5 @@
     <hr>
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-<!--            <div class="modal-header">-->
-<!--                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>-->
-<!--<!--                <h1 class="text-center">Mapa</h1>-->-->
-<!--            </div>-->
-            <div class="modal-body">
-                <div class="embed-responsive embed-responsive-16by9">
-                    <iframe class="embed-responsive-item" frameborder="0"></iframe>
-                </div>
-<!--                <iframe class="embed-responsive-item embed-responsive-16by9" frameborder="0" src="https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20" width="100%"></iframe>-->
-
-            </div>
-        </div>
-    </div>
-</div>
 
 <?php include 'footer.php'?>
