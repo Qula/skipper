@@ -31,8 +31,6 @@ $(function() {
     };
     $(".head-desc").on("click", function() {
         var kasa = $(this).attr("data-kasa");
-//        console.log((malaPlus.zdjecia).length);
-
 
         if($("#kNazwa + span").length){
             clean();
@@ -42,16 +40,9 @@ $(function() {
         }else if(kasa == "malaPlus"){
             showDetails(malaPlus);
         }
-       // showDetails(window["lupo"]);
-        //$("#kNazwa").attr("src", haxsrc).removeClass("hidden").after("<img src='"+lupo.zdjecia[0]+"' class='img-responsive'>");
-        //$("#kNazwa + img").remove();
-        //$("#kZdjecia").after("<img src='"+kasa.zdjecia[0]+"' class='img-responsive'>");
-        //$("#kCechy").after();
-        //$("#kCena").after();
-        //$("#kOpis").after();
-        //$("#kDane").after();
     });
-var html;
+
+    var html;
     function showDetails(kasa){
         $("#kNazwa").after("<span>"+kasa.nazwa+"</span>");
         html = "";
@@ -80,56 +71,5 @@ var html;
         $("#kOpis + p").remove();
         $("#kDane + table").remove();
     }
-
-    //<ul class="custom-bullet list-unstyled ">
-    //    <li><i class="glyphicon glyphicon-chevron-right"></i> komputerów stacjonarnych</li>
-    //<li><i class="glyphicon glyphicon-chevron-right"></i> laptopów</li>
-    //<li><i class="glyphicon glyphicon-chevron-right"></i> kas i drukarek fiskalnych</li>
-    //<li><i class="glyphicon glyphicon-chevron-right"></i> odzyskujemy dane</li>
-    //<li><i class="glyphicon glyphicon-chevron-right"></i> usuwamy szkodliwe oprogramowanie (wirusy, trojany, spam)</li>
-    //<li><i class="glyphicon glyphicon-chevron-right"></i> instalujemy oprogramowanie (windows, sterowniki, anty-virus, open office itp.)</li>
-    //<li><i class="glyphicon glyphicon-chevron-right"></i> budujemy i konfigurujemy sieci komputerowe</li>
-    //<li> oraz wiele innych.</li>
-    //</ul>
-    //
-    //
-
-    //var form = $('#ajax-contact');
-    //var formMessages = $('#form-messages');
-    //
-    //$(form).submit(function(e) {
-    //    e.preventDefault();
-    //
-    //    var formData = $(form).serialize();
-    //
-    //    $.ajax({
-    //        type: 'POST',
-    //        url: $(form).attr('action'),
-    //        data: formData
-    //    })
-    //        .done(function(response) {
-    //            $(formMessages).removeClass('error');
-    //            $(formMessages).addClass('success');
-    //
-    //            $(formMessages).text(response);
-    //
-    //            $('#name').val('');
-    //            $('#email').val('');
-    //            $('#telephone').val('');
-    //            $('#message').val('');
-    //            grecaptcha.reset();
-    //        })
-    //        .fail(function(data) {
-    //            $(formMessages).removeClass('success');
-    //            $(formMessages).addClass('error');
-    //
-    //            if (data.responseText !== '') {
-    //                $(formMessages).text(data.responseText);
-    //            } else {
-    //                $(formMessages).text('Oops! Napotkano bład i Twoja widomość nie zostanie wysłana.');
-    //            }
-    //        });
-    //
-    //});
 
 });

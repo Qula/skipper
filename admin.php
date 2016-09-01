@@ -29,4 +29,4 @@ include 'admin-header.php';
         <div id="admin-regaty" class="col-md-10"></div>
     </div>
 </div>
-<?php include 'footer.php'?>
+<?php include 'footer-admin.php' ?>

@@ -1,4 +1,3 @@
-console.log("trumb");
 $('#tekst').trumbowyg({
     btns: [
         ['viewHTML'],

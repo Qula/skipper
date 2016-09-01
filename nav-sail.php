@@ -23,7 +23,7 @@
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
         <a href="sezon.php">
             <div class="head-desc">
-                <img src="pic/sezon.jpg" class="img-responsive" alt="" id="sezon">
+                <img src="pic/sezon2.jpg" class="img-responsive" alt="" id="sezon">
                 <div class="head-name">
                     <p>SEZON 2016</p>
                 </div>

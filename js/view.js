@@ -1,41 +1,12 @@
-
+function goBack() {
+    window.history.back();
+}
 $(".head-desc").hover(function() {
     $(this).children().stop().animate({"backgroundColor":"#193d5b"},200);
     $(this).stop().animate({"borderColor":"#193d5b"},200);
 }, function() {
     $(this).children().stop().animate({"backgroundColor":"rgb(51, 122, 183)"}, 600);
     $(this).stop().animate({"borderColor": "rgb(51, 122, 183)"}, 600);
-});
-
-
-function iframeModalOpen(){
-
-    // impostiamo gli attributi da aggiungere all'iframe es: data-src andrà ad impostare l'url dell'iframe
-    $('.modalButton').on('click', function(e) {
-        var src = $(this).attr('data-src');
-        var width = $(this).attr('data-width') || 640; // larghezza dell'iframe se non impostato usa 640
-        var height = $(this).attr('data-height') || 360; // altezza dell'iframe se non impostato usa 360
-
-
-
-        // stampiamo i nostri dati nell'iframe
-        $("#myModal iframe").attr({
-            'src': src,
-            'height': height,
-            'width': width,
-            'allowfullscreen':''
-        });
-    });
-
-    // se si chiude la modale resettiamo i dati dell'iframe per impedire ad un video di continuare a riprodursi anche quando la modale è chiusa
-    $('#myModal').on('hidden.bs.modal', function(){
-        $(this).find('iframe').html("");
-        $(this).find('iframe').attr("src", "");
-    });
-}
-
-$(document).ready(function(){
-    iframeModalOpen();
 });
 
 $(".scroll").on("click", function(){
@@ -58,35 +29,16 @@ $(window).on('scroll', function () {
     } else {
         $(".scrollToTop").stop().animate({ bottom: -100}, 300);
     }
-
-
-    //console.log(isScrolledIntoView("#sprzetkomputerowy"));
-    //if(isScrolledIntoView("#sprzetkomputerowy") && !($("sp").is(":visible")) ){
-    //    //$("#sp").css({opacity: 0, visibility: "visible"}).animate({opacity: 1.0}, 5000);
-    //}
 });
 
-function isScrolledIntoView(elem) {
-    if ($(elem).length == 0) {
-        return false;
-    }
-    var docViewTop = $(window).scrollTop();
-    var docViewBottom = docViewTop + $(window).height();
-
-    var elemTop = $(elem).offset().top;
-    var elemBottom = elemTop + $(elem).height();
-    //  return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop)); //try it, will only work for text
-    return (docViewBottom >= elemTop && docViewTop <= elemBottom);
-}
 
 $(document).ready(function() {
     var pathname = this.location.pathname;
     if(pathname == "/skipper/sklep.php" || pathname == "/skipper/kasy.php"){
-        $('a[href="/skipper/sklep.php"]').parent().addClass('active'); // bootstrap navbar active
+        $('a[href="/skipper/sklep.php"]').parent().addClass('active');
     }else{
-        $('a[href="/skipper/zeglarstwo.php"]').parent().addClass('active'); // bootstrap navbar active
+        $('a[href="/skipper/zeglarstwo.php"]').parent().addClass('active');
     }
-
 
     var $recaptcha = document.querySelector('#g-recaptcha');
 
@@ -107,12 +59,9 @@ $("#card").on('flip:done',function(){
 
     if(!cardClick){
         var src = "https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20";
-        var width = $(".front img").width() || 640; // larghezza dell'iframe se non impostato usa 640
-        var height = $(".front img").height() || 360; // altezza dell'iframe se non impostato usa 360
+        var width = $(".front img").width() || 640;
+        var height = $(".front img").height() || 360;
 
-
-
-        // stampiamo i nostri dati nell'iframe
         $(".back iframe").attr({
             'src': src,
             'height': height,
@@ -122,8 +71,6 @@ $("#card").on('flip:done',function(){
         deteleMap();
         cardClick = true;
     }
-
-    //Disclaimer: ^This function is fake :)
 });
 
 function deteleMap(){
@@ -146,9 +93,8 @@ $("#asprzedaz, #afinanse, #aplace, #aksiega, #asrodki, #acennik").on("click", fu
         $(this).removeClass("hidden");
     });
 
-});
+}).flip();
 
-$("#asprzedaz, #afinanse, #aplace, #aksiega, #asrodki, #acennik").flip();
 
 
 $(document).ready(function() {
@@ -157,14 +103,11 @@ $(document).ready(function() {
     var footerTop = $('#footer').position().top + footerHeight;
 
     if (footerTop < docHeight) {
-        $('#footer').css('margin-top',  (docHeight - footerTop) + footerHeight -2 + 'px');
-
+        $('#footer').css('margin-top',  (docHeight - footerTop) + footerHeight - 2 + 'px');
     }
-
-
 });
 
 $('.panel-title .pull-right, .panel-title a').on('click', function(){
-   $(this).find('.pull-right').toggleClass("glyphicon glyphicon-chevron-down glyphicon glyphicon-chevron-up");//removeClass('glyphicon glyphicon-chevron-down').addClass('glyphicon glyphicon-chevron-up');
+   $(this).find('.pull-right').toggleClass("glyphicon glyphicon-chevron-down glyphicon glyphicon-chevron-up");
 });
 

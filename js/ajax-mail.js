@@ -16,7 +16,6 @@ $(function() {
             .done(function(response) {
                 $(formMessages).removeClass('error');
                 $(formMessages).addClass('success');
-
                 $(formMessages).text(response);
 
                 $('#name').val('');
@@ -35,7 +34,5 @@ $(function() {
                     $(formMessages).text('Oops! Napotkano bład i Twoja widomość nie zostanie wysłana.');
                 }
             });
-
     });
-
 });

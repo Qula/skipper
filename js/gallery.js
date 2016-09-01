@@ -1,22 +1,18 @@
 $(document).ready(function() {
-    console.log("Gallery");
     $('.popup-video').magnificPopup({
         type: 'iframe'
-        // other options
     });
 
     $('.parent-container').magnificPopup({
-        delegate: 'a', // child items selector, by clicking on it popup will open
+        delegate: 'a',
         type: 'image',
         gallery: {
             enabled: true
         }
-        // other options
     });
 
     $('.popup-img').magnificPopup({
         type: 'image'
-        // other options
     });
 
 });
@@ -36,9 +32,6 @@ function getPic(dataurl){
         success: function (data) {
             $(data).find("a").attr("href", function (i, val) {
                 if( val.toLowerCase().match(/\.(jpe?g|png|gif)$/) ) {
-
-                    //$("body").append( "<p>"+ folder + val +"</p>" );
-
                     items.push({src: folder+val});
                 }
             });

@@ -34,4 +34,4 @@
 
 
 </div>
-<?php include 'footer.php'?>
+<?php include 'footer-zagle.php' ?>
