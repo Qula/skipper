@@ -194,7 +194,7 @@ footer > .navbar {
         height: 60px;
     }
     .before-card {
-        height: 280px;
+        height: 310px;
     }
 }
 @media screen and (max-width: 400px) {
@@ -280,4 +280,8 @@ tr :first-child {
 
 .backbtn {
     margin-top: 20px;
+}
+
+.panel {
+    border-radius: 0 !important;
 }

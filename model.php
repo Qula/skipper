@@ -356,12 +356,34 @@ class Model
 
     public function getGallery()
     {
-        $sql = "SELECT regatta.name, news.galleryurl FROM news, regatta WHERE news.deleted = 0 AND news.galleryurl !='' AND news.id = regatta.gallery ORDER BY news.date ASC";
+        $sql = "SELECT news.id, regatta.name, news.galleryurl FROM news, regatta WHERE news.deleted = 0 AND news.galleryurl !='' AND news.id = regatta.gallery ORDER BY news.date ASC";
 
         $stmt = $this->conn->prepare( $sql );
         $stmt->execute();
 
         return $stmt;//->fetchAll(PDO::FETCH_ASSOC);;
+    }
+
+    public function authGallery($id, $path)
+    {
+        $sql = "SELECT * FROM news WHERE id = :id AND galleryurl = :galleryurl LIMIT 1";
+
+        $stmt = $this->conn->prepare( $sql );
+        $stmt->bindValue(':id', $id, PDO::PARAM_INT);
+        $stmt->bindValue(':galleryurl', $path, PDO::PARAM_STR);
+        $stmt->execute();
+
+        if( $stmt->rowCount() > 0) {
+            $images = glob($path . '*.[jJ][pP][gG]');
+
+            $imgtab = array();
+            foreach($images as $image)
+            {
+                $imgtab[] = $image;
+
+            }
+            return json_encode($imgtab);
+        }
     }
 
     public function getAllPosts()

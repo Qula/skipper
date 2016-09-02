@@ -41,7 +41,7 @@
         $count = 0;
         foreach($result as $row){
             ?>
-                <button class="btn btn-default btn-lg galbut" data-url="<?php echo $row['galleryurl'];?>"><?php echo $row['name'];?></button>
+                <button class="btn btn-default btn-lg galbut" data-id="<?php echo $row['id'];?>" data-url="<?php echo $row['galleryurl'];?>"><?php echo $row['name'];?></button>
             <?php }?>
             </div>
     </div>

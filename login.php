@@ -1,7 +1,7 @@
 <?php include 'header.php'; ?>
     <script src='https://www.google.com/recaptcha/api.js'></script>
 <div class="row">
-    <div class="col-md-3 col-md-offset-5 col-sm-3 col-sm-offset-5 col-xs-5 col-xs-offset-4">
+    <div class="col-md-3 col-md-offset-5">
         <form action="user-manager.php?command=login" method="post">
             <input id="login" type="text" class="form-control" name="login" placeholder="Nazwa użytkownika" required>
             <input id="password" type="password" class="form-control" name="password" placeholder="Hasło" required>

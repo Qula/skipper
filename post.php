@@ -24,7 +24,7 @@
                         <a href="<?php echo $result['notificationurl']; ?>" class="popup-img"><img src="<?php echo $result['notificationurl']; ?>" class="img-responsive center-block"></a>
                     <?php }else if($result['galleryurl'] !=''){ ?>
 
-                    <button class="btn btn-default btn-lg galbut col-xs-12" data-url="<?php echo $result['galleryurl'];?>">Wyświetl galerię</button>
+                    <button class="btn btn-default btn-lg galbut col-xs-12" data-id="<?php echo $result['id'];?>" data-url="<?php echo $result['galleryurl'];?>">Wyświetl galerię</button>
 
                     <?php }?>
 

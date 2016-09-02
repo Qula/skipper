@@ -20,23 +20,33 @@ $(document).ready(function() {
 
 $('.galbut').on('click', function(){
     var dataurl = $(this).attr('data-url');
-    getPic(dataurl);
+    var id = $(this).attr('data-id');
+    getPic(dataurl, id);
 });
 
-function getPic(dataurl){
-    var folder = dataurl;
+function getPic(dataurl, id){
+
     var items = [];
 
+    var dataString = 'action=authGallery&path=' + dataurl + '&id=' + id;
+    console.log(dataString);
     $.ajax({
-        url : folder,
+        type: "POST",
+        url: "ajax-manager.php",
+        data: dataString,
+        cache: false,
         success: function (data) {
-            $(data).find("a").attr("href", function (i, val) {
-                if( val.toLowerCase().match(/\.(jpe?g|png|gif)$/) ) {
-                    items.push({src: folder+val});
-                }
-            });
+            data = JSON.parse(data);
+            for(var i=0; i< data.length; i++){
+                console.log(data[i]);
+                items.push({src: data[i]});
+                console.log('-');
+                console.log(items[i]);
+            }
+
         },
         complete: function() {
+            console.log("complete");
             $.magnificPopup.open({
                 items: items,
                 type: 'image',
@@ -45,6 +55,8 @@ function getPic(dataurl){
         }
     });
 
+
 }
+
 
 
