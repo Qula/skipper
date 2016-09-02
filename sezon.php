@@ -32,9 +32,9 @@
                                     <div class="col-md-4 col-xs-12"><span class="regaty-nazwa">Organizator:</span> <?php echo $row['organizer'] ?></div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['notification']) {echo '<a href="post.php?id='.$row['notification'].'" target="_blank">Zawiadomienie</a>';} ?></span></div>
-                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['results']) {echo '<a href="post.php?id='.$row['results'].'" target="_blank">Wyniki</a>';} ?></span></div>
-                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['gallery']) {echo '<a href="post.php?id='.$row['gallery'].'" target="_blank">Galeria</a>';} ?></span></div>
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['notification']) {echo '<a href="post.php?id='.$row['notification'].'" ">Zawiadomienie</a>';} ?></span></div>
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['results']) {echo '<a href="post.php?id='.$row['results'].'" ">Wyniki</a>';} ?></span></div>
+                                    <div class="col-md-4 col-xs-12"><span class="regaty-nazwa"> <?php if($row['gallery']) {echo '<a href="post.php?id='.$row['gallery'].'" ">Galeria</a>';} ?></span></div>
                                 </div>
                             </div>
                         </div>
@@ -42,8 +42,6 @@
                 </div>
             </div>
         <?php $count++;}?>
-
-
 
     </div>
 
@@ -53,10 +51,10 @@
             <div class="panel panel-default"><div class="panel-heading">Wstępna rezerwacja terminu regat</div> </div>
         </div>
         <div class="col-md-4">
-            <div class="panel panel-success"><div class="panel-heading">Regaty potwierdzone</div> </div>
+            <div class="panel panel-warning"><div class="panel-heading">Regaty niepotwierdzone</div> </div>
         </div>
         <div class="col-md-4">
-            <div class="panel panel-warning"><div class="panel-heading">Regaty niepotwierdzone</div> </div>
+            <div class="panel panel-success"><div class="panel-heading">Regaty potwierdzone</div> </div>
         </div>
     </div>
 </div>

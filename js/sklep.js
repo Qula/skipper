@@ -81,6 +81,9 @@ $(document).ready(function() {
     }
 
     $('#map-load').removeClass('hidden');
+
+    $('#card .back').removeClass('hidden');
+
     $(".back iframe").attr({
         'src': ''
     });
@@ -149,6 +152,7 @@ $('.panel-title .pull-right, .panel-title a').on('click', function(){
 
     var form = $('#ajax-contact');
     var formMessages = $('#form-messages');
+
 
     $(form).submit(function(e) {
         e.preventDefault();

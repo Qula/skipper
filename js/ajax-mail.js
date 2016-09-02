@@ -3,6 +3,7 @@ $(function() {
     var form = $('#ajax-contact');
     var formMessages = $('#form-messages');
 
+
     $(form).submit(function(e) {
         e.preventDefault();
 

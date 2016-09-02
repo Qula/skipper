@@ -12,7 +12,6 @@ $('#tekst').trumbowyg({
         'table'
     ],
     lang: 'pl',
-    autogrow: true,
     semantic: false,
     removeformatPasted: true
 });

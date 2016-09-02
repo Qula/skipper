@@ -8,28 +8,62 @@ include 'admin-header.php';
     <p>Dodowanie regat</p>
     <hr>
     <div class="row">
-        <div class="col-md-5 ">
-            <h5>Nazwa:</h5>
-            <textarea id="nazwa" class="form-control" rows="1" name="nazwa" required></textarea>
-            <h5>Klasa:</h5>
-            <textarea id="klasa" class="form-control" rows="1" name="klasa" placeholder="Delphia 24, Sportina 595"></textarea>
-            <h5>Data:</h5>
-            <textarea id="data" class="form-control" rows="1" name="data" placeholder="2016-05-05"></textarea>
-            <h5>Organizator:</h5>
-            <textarea id="organizator" class="form-control" rows="1" name="organizator"></textarea>
-            <h5>Status:</h5>
-            <select name="stan" class="status-select">
-                <option value="0" >Wstępna rezerwacja terminu</option>
-                <option value="1" >Potwierdzone</option>
-                <option value="2" >Niepotwierdzone</option>
-            </select>
-
-            <h5>Wyświetlaj na głównej stronie:</h5>
-            <select name="widok" class="view-select">
-                <option value="0" >Tak</option>
-                <option value="1" >Nie</option>
-            </select>
-            <button type="button" class="btn btn-primary pull-right" onclick="saveRegatta()">Wyślij</button>
+        <div class="col-md-8">
+            <form id="ajax-add" class="form-horizontal" role="form" method="post" action="ajax-manager.php" data-type="saveRegatta">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="tytul">Nazwa:</label>
+                        <textarea id="tytul" class="form-control" rows="1" name="name" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="tekstmin">Klasa</label>
+                        <textarea id="tekstmin" class="form-control" rows="1" name="type" placeholder="Delphia 24, Sportina 595" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="data">Data:</label>
+                        <textarea id="data" class="form-control" rows="1" name="date" placeholder="2016-05-05" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="organizator">Organizator:</label>
+                        <textarea id="organizator" class="form-control" rows="1" name="organizer" required></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="stan">Status:</label><br>
+                        <select id="stan" name="status" class="view-select">
+                            <option value="0" >Wstępna rezerwacja terminu</option>
+                            <option value="1" >Potwierdzone</option>
+                            <option value="2" >Niepotwierdzone</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <label for="deleted">Wyswietlaj na głównej stronie:</label><br>
+                        <select id="deleted" name="deleted" class="view-select">
+                            <option value="0" selected>Tak</option>
+                            <option value="1">Nie</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input id="submit" name="submit" type="submit" value="Wyślij" class="btn btn-primary pull-right">
+                    </div>
+                </div>
+            </form>
+            <div class="form-group">
+                <div class="col-md-12">
+                    <div id="form-messages"></div>
+                </div>
+            </div>
         </div>
     </div>
 </div>

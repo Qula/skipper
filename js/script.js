@@ -5,20 +5,23 @@ $(".pic-select").change(function (){
     var selected = $(".pic-select").val();
     if(selected === "zawiadomienie"){
         $(".zawiadomienie").remove();
-        $(".pic-select").after(
-            "<h5 class='zawiadomienie'>Link do zawiadomienia:</h5>" +
-            "<textarea class='form-control zawiadomieniea add-url' rows='1' name='add-url' placeholder='zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea> ");
+        $(".dodatkowe-opcje").after("<div class='form-group zawiadomienie'>" +
+            "<div class='col-md-12'>" +
+            "<label for='link'>Link do zawiadomienia:</label>" +
+            "<textarea id='link' class='form-control zawiadomienie add-url' rows='1' name='url' placeholder='zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea></div></div>");
         getRegattaListAd();
     }else if(selected == "wyniki"){
         $(".zawiadomienie").remove();
         getRegattaListAd();
     }else if(selected === "galeria"){
         $(".zawiadomienie").remove();
-        $(".pic-select").after(
-            "<h5 class='zawiadomienie'>Link do galerii:</h5>" +
-            "<textarea class='form-control zawiadomienie add-url' rows='1' name='add-url' placeholder='galeria/Puchar Wojta Gminy Grodek nad Dunajcem/' required></textarea> ");
-
         getRegattaListAd();
+        $(".dodatkowe-opcje").after("<div class='form-group zawiadomienie'>" +
+            "<div class='col-md-12'>" +
+            "<label for='link'>Link do galerii:</label>" +
+            "<textarea id='link' class='form-control zawiadomienie add-url' rows='1' name='url' placeholder='galeria/Puchar Wojta Gminy Grodek nad Dunajcem/' required></textarea></div></div>");
+
+
     }else if(selected === "inne"){
         $(".zawiadomienie").remove();
     }
@@ -32,12 +35,12 @@ function getRegattaListAd() {
         cache: false,
         success: function(result) {
             var resultGet = JSON.parse(result);
-            var html = '<h5 class="zawiadomienie">Regaty:</h5><select name="regaty" class="regaty-select zawiadomienie" required>';
+            var html = '<div class="form-group zawiadomienie"><div class="col-md-12"><label for="regaty">Regaty:</label><br><select id="regaty" name="rid" class="regaty-select zawiadomienie" required>';
             for (var i = 0; i < resultGet.length; i++) {
                 html += '<option value="'+ resultGet[i].id +'">'+resultGet[i].name +'</option>';
             }
-            html += '</select>';
-            $('.pic-select').after(html);
+            html += '</select></div></div>';
+            $('.dodatkowe-opcje').after(html);
         },
         error: function(){
             console.log("error");
@@ -87,95 +90,45 @@ function getMorePosts(){
     }
 }
 
-function saveData(){
-    var title = $("#tytul").val();
-    var description = $("#tekst").val();
-    var image = $(".pic-select").val();
-    var deleted = $(".view-select").val();
-    var regatta = $(".regaty-select").val();
-    var descriptionmin = $('#tekstmin').val();
-    var url = $(".add-url").val();
+$(function() {
 
-    var dataString = 'action=saveData&title=' + title + '&text=' + description + '&textmin=' + descriptionmin + '&image=' + image + '&deleted=' + deleted + '&rid=' + regatta + "&url=" + url;
+    var form = $('#ajax-add');
+    var formMessages = $('#form-messages');
+    var formType = $(form).attr('data-type');
 
-    $.ajax({
-        type: "POST",
-        url: "ajax-manager.php",
-        data: dataString,
-        cache: false,
-        success: function(result) {
-            var resultGet = JSON.parse(result);
-            alert(resultGet[0]);
-            window.location.assign('admin.php');
-        }
+    $(form).submit(function(e) {
+        e.preventDefault();
+
+        var disabled = form.find('select').removeAttr('disabled');
+        var formData = $(form).serialize() + "&action=" + formType;
+        console.log(formData);
+        $.ajax({
+            type: 'POST',
+            url: $(form).attr('action'),
+            data: formData
+        })
+            .done(function(response) {
+                $(formMessages).removeClass('error');
+                $(formMessages).addClass('success');
+
+                $(formMessages).text('Zapis zakończony! Automatyczny powrót do panelu admina za 3s.');
+
+                window.setTimeout(function(){
+                    window.location.href = "admin.php";
+                }, 3000);
+            })
+            .fail(function(data) {
+                $(formMessages).removeClass('success');
+                $(formMessages).addClass('error');
+
+                if (data.responseText !== '') {
+                    $(formMessages).text(data.responseText);
+                } else {
+                    $(formMessages).text('Oops! Napotkano bład i wpis nie został zapisany.');
+                }
+            });
     });
-}
-
-function saveRegatta(){
-    var name = $("#nazwa").val();
-    var type = $("#klasa").val();
-    var date = $("#data").val();
-    var status = $(".status-select").val();
-    var deleted = $(".view-select").val();
-    var organizer = $("#organizator").val();
-    var dataString = 'action=saveRegatta&name=' + name + '&type=' + type + '&date=' + date + '&organizer=' + organizer +'&status=' + status + '&deleted=' + deleted;
-    $.ajax({
-        type: "POST",
-        url: "ajax-manager.php",
-        data: dataString,
-        cache: false,
-        success: function(result) {
-            var resultGet = JSON.parse(result);
-            alert(resultGet[0]);
-            window.location.assign('admin.php');
-        }
-    });
-}
-
-function saveAsData(){
-    var title = $("#tytul").val();
-    var description = $("#tekst").val();
-    var image = $(".pic-select").val();
-    var id = getUrlVars().id;
-    var descriptionmin = $('#tekstmin').val();
-    var url = $(".add-url").val();
-    var deleted = $(".view-select").val();
-    var dataString = 'action=saveAsData&title=' + title + '&text=' + description + '&textmin=' + descriptionmin + '&image=' + image + '&id=' + id + '&deleted=' + deleted + "&url=" + url;
-    $.ajax({
-        type: "POST",
-        url: "ajax-manager.php",
-        data: dataString,
-        cache: false,
-        success: function(result) {
-            var resultGet = JSON.parse(result);
-            alert(resultGet[0]);
-            window.location.assign('admin.php');
-        }
-    });
-}
-
-function saveAsRegatta(){
-    var name = $("#nazwa").val();
-    var type = $("#klasa").val();
-    var date = $("#data").val();
-    var status = $(".status-select").val();
-    var deleted = $(".view-select").val();
-    var organizer = $("#organizator").val();
-    var id = getUrlVars().id;
-
-    var dataString = 'action=saveAsRegatta&name=' + name + '&type=' + type + '&date=' + date + '&organizer=' + organizer + '&status=' + status + '&deleted=' + deleted + '&id=' + id;
-    $.ajax({
-        type: "POST",
-        url: "ajax-manager.php",
-        data: dataString,
-        cache: false,
-        success: function(result) {
-            var resultGet = JSON.parse(result);
-            alert(resultGet[0]);
-            window.location.assign('admin.php');
-        }
-    });
-}
+});
 
 function getPostList() {
     var dataString = 'action=getPostList';
@@ -225,10 +178,4 @@ function getRegattaList() {
     });
 }
 
-function getUrlVars() {
-    var vars = {};
-    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-        vars[key] = value;
-    });
-    return vars;
-}
+

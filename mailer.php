@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail = new PHPMailer;
 
             $mail->isSMTP();
+            $mail->SMTPDebug = 0;
             $mail->SMTPOptions = array( // DO SPRAWDZENIA
                 'ssl' => array(
                     'verify_peer' => false,
@@ -41,21 +42,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Host = 'www.poczta.fm;poczta.interia.pl';
             $mail->SMTPAuth = true;
             $mail->Username = 'blogasek.blogasek@interia.pl';
-            $mail->Password = 'blogasek12';
+            $mail->Password = 'blogasek13';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 
             //DO ZAMIANY
             $mail->From = 'blogasek.blogasek@interia.pl';
-            $mail->FromName = $name;
+//            $mail->FromName = 'blogasek.blogasek@interia.pl';
+
             $mail->addAddress('blogasek.blogasek@interia.pl');
+            if($contact === 'aktyn'){
+                $mail->addAddress('markul2@o2.pl');
+            }else if($contact === 'kasy'){
+                $mail->addAddress('kulamarcin2@gmail.com');
+            }else if($contact === 'komputery'){
+                $mail->addAddress('qulapgo@gmail.com');
+            }
 
             $mail->isHTML(false);
             $mail->setLanguage('pl');
             $mail->CharSet = 'UTF-8';
 
             $mail->Subject = "Nowa wiadomość od ".$name;
-            $mail->Body = "Formularz strony.\r\n W sprawie:".$contact."\r\nNazwa: ".$name."\r\nE-mail: ".$email."\r\nTelefon: ".$tel."\r\nTreść:\r\n".$message;
+            $mail->Body = "Formularz strony.\r\nW sprawie:".$contact."\r\nNazwa: ".$name."\r\nE-mail: ".$email."\r\nTelefon: ".$tel."\r\nTreść:\r\n".$message;
 
             if(!$mail->send())
             {

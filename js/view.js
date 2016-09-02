@@ -47,6 +47,9 @@ $(document).ready(function() {
     }
 
     $('#map-load').removeClass('hidden');
+
+    $('#card .back').removeClass('hidden');
+
     $(".back iframe").attr({
         'src': ''
     });

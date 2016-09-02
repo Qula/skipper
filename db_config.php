@@ -1,6 +1,6 @@
 <?php
     $dbHost = 'localhost';
-    $dbName = 'skipperDB';
+    $dbName = 'skipperdb';
     $dbUserName = 'root';
     $dbPassword = '';
 ?>

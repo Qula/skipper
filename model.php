@@ -11,7 +11,7 @@ class Model
 
         try
         {
-            $this->conn = new PDO("mysql:host=$dbHost;dbname=$dbName", $dbUserName, $dbPassword);
+            $this->conn = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8", $dbUserName, $dbPassword);
         }
         catch (PDOException $e)
         {

@@ -87,9 +87,9 @@
         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-10 before-card">
             <div id="card">
                 <div class="front">
-                    <img class="img-responsive" src="pic/mapa.JPG">
+                    <img class="img-responsive" src="pic/mapa.jpg">
                 </div>
-                <div class="back">
+                <div class="back hidden">
                     <img class="img-responsive hidden" id="map-load" src="pic/load.gif">
                     <div class="embed-responsive embed-responsive-4by3">
                         <iframe class="embed-responsive-item" frameborder="0"></iframe>
@@ -384,7 +384,7 @@
                 <div class="form-group">
                     <label for="telefon" class="col-sm-3 control-label">Telefon</label>
                     <div class="col-sm-9">
-                        <input type='tel' pattern="^\d{3}?\d{3}?\d{3}$" class="form-control" id="telephone" name="telefon" placeholder="123-456-789" title="Format: 123-456-789" value="">
+                        <input type='tel' class="form-control" id="telephone" name="telefon" placeholder="123-456-789" title="Format: 123-456-789" value="">
                     </div>
                 </div>
                 <div class="form-group">
