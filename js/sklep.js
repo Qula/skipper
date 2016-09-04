@@ -68,6 +68,7 @@ $(window).on('scroll', function () {
 
 $(document).ready(function() {
     var pathname = this.location.pathname;
+    console.log(pathname);
     if(pathname == "/skipper/sklep.php" || pathname == "/skipper/kasy.php"){
         $('a[href="/skipper/sklep.php"]').parent().addClass('active');
     }else{
@@ -88,9 +89,33 @@ $(document).ready(function() {
         'src': ''
     });
 
+    mapResize();
+
+
+
+
+
 });
 
+$(window).resize(function(){
+    mapResize();
+});
 var cardClick = false;
+var mapHeight = 0;
+function mapResize(){
+
+    if(!cardClick){
+        mapHeight = $('#card img').height();
+        $('.before-card').css('height',mapHeight+10);
+    }else{
+        mapHeight = $('.embed-responsive-item').height();
+        $('.before-card').css('height',mapHeight+5);
+    }
+
+    console.log(mapHeight);
+}
+
+
 $("#card").flip();
 $("#card").on('flip:done',function(){
 
@@ -106,14 +131,16 @@ $("#card").on('flip:done',function(){
             'allowfullscreen':''
         });
         deteleMap();
+
         cardClick = true;
+        mapResize();
     }
 });
 
 function deteleMap(){
     setTimeout(function() {
         $('#map-load').remove();
-    }, 500);
+    }, 400);
 }
 
 var aktynActive ;

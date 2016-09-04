@@ -32,7 +32,7 @@ function getPic(dataurl, id){
     console.log(dataString);
     $.ajax({
         type: "POST",
-        url: "ajax-manager.php",
+        url: "ajax-user.php",
         data: dataString,
         cache: false,
         success: function (data) {

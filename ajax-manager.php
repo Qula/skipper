@@ -1,4 +1,6 @@
 <?php
+session_start();
+include "admin-header.php";
 include "model.php";
 
 $model = Model::getInstance();
@@ -41,10 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             if ($ans && $ansreg) {
                 http_response_code(200);
-//                echo json_encode(array("Zapisano wpis."));
             } else {
                 http_response_code(500);
-//                echo json_encode(array("Wystąpił błąd."));
             }
         }
         if ($_POST['action'] == 'saveRegatta') {
@@ -57,10 +57,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $ans = $model->saveRegatta($name, $type, $date, $organizer, $status, $deleted);
             if ($ans) {
                 http_response_code(200);
-//                echo json_encode(array("Zapisano wpis."));
             } else {
                 http_response_code(500);
-//                echo json_encode(array("Wystąpił błąd."));
             }
         }
         if ($_POST['action'] == 'saveAsData') {
@@ -75,7 +73,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $url = $_POST['url'];
                 switch ($_POST['image']) {
                     case 'zawiadomienie':
-                        // saveas dla zawiadomienia $ans = $model->saveData($title, $text, $textmin, $img, $deleted);
                         $ans = $model->saveAsDataNotification($title, $text, $textmin, $img, $id, $url, $deleted);
 
                         break;
@@ -89,10 +86,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             if ($ans) {
                 http_response_code(200);
-//                echo json_encode(array("Zapisano wpis."));
             } else {
                 http_response_code(500);
-//                echo json_encode(array("Wystąpił błąd."));
             }
         }
         if ($_POST['action'] == 'saveAsRegatta') {
@@ -106,10 +101,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $ans = $model->saveAsRegatta($name, $type, $date, $organizer, $status, $deleted, $id);
             if ($ans) {
                 http_response_code(200);
-//                echo json_encode(array("Zapisano wpis."));
             } else {
                 http_response_code(500);
-//                echo json_encode(array("Wystąpił błąd."));
             }
         }
         if ($_POST['action'] == 'getPostList') {
@@ -120,20 +113,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = $model->getAllRegatta();
             echo $result;
         }
-        if ($_POST['action'] == 'getMorePosts') {
-            $pagi = (int)$_POST['pagi'];
-            //echo $pagi;
-            //$test = 3;
-            $result = $model->getPosts($pagi);
-            echo json_encode($result->fetchAll(PDO::FETCH_ASSOC));
-        }
-        if ($_POST['action'] == 'authGallery' && $_POST['id'] != 'undefined' && $_POST['path'] != 'undefined'){
-            $id = $_POST['id'];
-            $path = $_POST['path'];
 
-            $result = $model->authGallery($id, $path);
-            echo $result;
-
-        }
     }
 }

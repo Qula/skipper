@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $mail->Host = 'www.poczta.fm;poczta.interia.pl';
             $mail->SMTPAuth = true;
             $mail->Username = 'blogasek.blogasek@interia.pl';
-            $mail->Password = 'blogasek13';
+            $mail->Password = 'blogasek14';
             $mail->SMTPSecure = 'tls';
             $mail->Port = 587;
 

@@ -335,7 +335,7 @@ class Model
 
     public function getPosts($page)
     {
-        $sql = "SELECT * FROM news WHERE deleted = 0 ORDER BY id DESC LIMIT :page, 3 ";
+        $sql = "SELECT * FROM news WHERE deleted = 0 ORDER BY id DESC LIMIT :page, 6 ";
 
         $stmt = $this->conn->prepare( $sql );
         $stmt->bindValue(':page', $page, PDO::PARAM_INT);

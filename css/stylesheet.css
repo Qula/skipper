@@ -1,13 +1,17 @@
 .post-min{
     margin-top: 20px;
-    height: 400px;
-    border-bottom: solid;
-    border-bottom-color: #0f0f0f;
+    height: 270px;
+    margin-bottom: 50px;
+    /*border-bottom: solid;*/
+    /*border-bottom-color: #0f0f0f;*/
     text-align: justify;
 }
 .post-max{
     text-align: justify;
 }
+/*.post-min >img {*/
+    /*max-height: 50%;*/
+/*}*/
 /*.navbar{*/
     /*background-color: #428bca;*/
 /*}*/
@@ -27,10 +31,14 @@
 .read-more{
     position: absolute;
     bottom: 5px;
-    left: 5px;
+    right: 10px;
 }
 .btn {
     border-radius: 0;
+    border-width: 0.25em;
+    background: none;
+    color: rgb(51, 122, 183);
+    font-weight: bold;
 }
 .post-title{
     color: rgb(51, 122, 183);
@@ -57,9 +65,10 @@
 }
 .head-name {
     text-transform: uppercase;
-    color: #ffffff;
+    color: white;
     font-weight: bold;
-    background-color: rgb(51, 122, 183);
+    background: rgb(51, 122, 183);
+
     position: absolute;
     bottom: 0;
     height: 50px;
@@ -193,13 +202,13 @@ footer > .navbar {
     .aktyn div {
         height: 60px;
     }
-    .before-card {
-        height: 310px;
+    .post-min {
+        height: 350px;
     }
 }
 @media screen and (max-width: 400px) {
-    .before-card {
-        height: 200px;
+    .post-min {
+        height: 260px;
     }
 }
 

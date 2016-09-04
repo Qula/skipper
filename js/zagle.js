@@ -8,7 +8,7 @@ $(".pic-select").change(function (){
         $(".dodatkowe-opcje").after("<div class='form-group zawiadomienie'>" +
             "<div class='col-md-12'>" +
             "<label for='link'>Link do zawiadomienia:</label>" +
-            "<textarea id='link' class='form-control zawiadomienie add-url' rows='1' name='url' placeholder='zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' required></textarea></div></div>");
+            "<textarea id='link' class='form-control zawiadomienie add-url' rows='1' name='url' placeholder='zawiadomienia/V%20Regaty%20o%20Puchar%20Gumowego%20Ryjka.jpg' ></textarea></div></div>");
         getRegattaListAd();
     }else if(selected == "wyniki"){
         $(".zawiadomienie").remove();
@@ -30,7 +30,7 @@ function getRegattaListAd() {
     var dataString = 'action=getRegattaList';
     $.ajax({
         type: "POST",
-        url: "ajax-manager.php",
+        url: "ajax-user.php",
         data: dataString,
         cache: false,
         success: function(result) {
@@ -49,14 +49,14 @@ function getRegattaListAd() {
     });
 }
 
-var pag = 3;
+var pag = 6;
 var allPosts = true;
 function getMorePosts(){
     if(allPosts) {
         var dataString = 'action=getMorePosts&pagi=' + pag;
         $.ajax({
             type: "POST",
-            url: "ajax-manager.php",
+            url: "ajax-user.php",
             data: dataString,
             cache: false,
             success: function (result) {
@@ -81,7 +81,7 @@ function getMorePosts(){
                     $('#posts-load').before(html);
                     allPosts = false;
                 }
-                pag = pag + 3;
+                pag = pag + 6;
             },
             error: function () {
                 $('#post-load').before('<p>Wystąpił błąd, prosimy sprobować później.</p>');
@@ -216,7 +216,7 @@ function getPic(dataurl, id){
     console.log(dataString);
     $.ajax({
         type: "POST",
-        url: "ajax-manager.php",
+        url: "ajax-user.php",
         data: dataString,
         cache: false,
         success: function (data) {

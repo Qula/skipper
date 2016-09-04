@@ -64,7 +64,7 @@
     <h1 id="onas">O nas</h1>
     <div class="row">
         <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12">
-            <p>Nasza firma prowadzi działalność od 1991 roku. Przez minione lata wypracowaliśmy sobie mocną pozycję na rynku komputerowym w Nowym Śączu.</p>
+            <p>Nasza firma prowadzi działalność od 1991 roku. Przez minione lata wypracowaliśmy sobie mocną pozycję na rynku komputerowym w Nowym Sączu.</p>
             <p>Zajmujemy się sprzedażą sprzętu komputerowego, oprogramowania oraz kas i drukarek fiskalnych.</p>
 
             <h3>Adres: </h3>
@@ -407,7 +407,7 @@
                 </div><br>
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
-                        <p>* Wymagane pola</p>
+                        <p class="">* Wymagane pola</p>
                         <input id="submit" name="submit" type="submit" value="Wyślij" class="btn btn-primary">
                     </div>
                 </div>
