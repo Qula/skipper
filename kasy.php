@@ -1,4 +1,6 @@
-<?php include 'header.php' ?>
+<?php
+$title = 'SKIPPER.COM.PL - kasy fiskalne';
+include 'header.php' ?>
 
 <div class="container">
     <button type="button" class="btn btn-primary" onclick="goBack()">Wróć do poprzedniej strony</button>

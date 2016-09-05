@@ -1,4 +1,6 @@
-<?php include 'header.php' ?>
+<?php
+$title = 'SKIPPER.COM.PL - galeria';
+include 'header.php' ?>
 <div class="container">
     <?php include 'nav-sail.php' ?>
     <hr>
@@ -41,7 +43,7 @@
         $count = 0;
         foreach($result as $row){
             ?>
-                <button class="btn btn-primary btn-lg galbut" data-id="<?php echo $row['id'];?>" data-url="<?php echo $row['galleryurl'];?>"><?php echo $row['name'];?></button>
+                <button class="btn btn-primary btn-lg galbut pull-left" data-id="<?php echo $row['id'];?>" data-url="<?php echo $row['galleryurl'];?>"><?php echo $row['name'];?></button>
             <?php }?>
             </div>
     </div>

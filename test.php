@@ -48,3 +48,13 @@ function partition($n)
 partition(5);
 
 ?>
+
+<script>
+    console.log("asd");
+    var string = "TEST Termina"
+    console.log(string.length);
+    console.log(((string.length) > 5  ? 'hello' : 'world'));
+    console.log( string.length < 5 ? (string).substring(0,5) : (string) );
+
+
+</script>

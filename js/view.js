@@ -1,6 +1,33 @@
+$(document).ready(function() {
+    var pathname = this.location.pathname;
+    console.log(pathname);
+    if(pathname == "/skipper/sklep.php" || pathname == "/skipper/kasy.php"){
+        $('a[href="/skipper/sklep.php"]').parent().addClass('active');
+    }else{
+        $('a[href="/skipper/zeglarstwo.php"]').parent().addClass('active');
+    }
+
+    var docHeight = $(window).height();
+    var footerHeight = $('#footer').outerHeight();
+    var footerTop = $('#footer').position().top + footerHeight;
+
+    if (footerTop < docHeight) {
+        $('#footer').css('margin-top',  (docHeight - footerTop) + footerHeight - 2 + 'px');
+    }
+
+    mapResize();
+    doladuj();
+
+    var $recaptcha = document.querySelector('#g-recaptcha');
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "required");
+    }
+});
+
 function goBack() {
     window.history.back();
 }
+
 $(".head-desc").hover(function() {
     $(this).children().stop().animate({"backgroundColor":"#193d5b"},200);
     $(this).stop().animate({"borderColor":"#193d5b"},200);
@@ -15,7 +42,6 @@ $(".scroll").on("click", function(){
 $(".scrollToTop").on("click", function() {
     $(window).scrollTo(".navbar", 500);
 });
-
 
 var scrollHeight, scrollPosition;
 $(window).on('scroll', function () {
@@ -32,44 +58,13 @@ $(window).on('scroll', function () {
 });
 
 
-$(document).ready(function() {
-    var pathname = this.location.pathname;
-    console.log(pathname);
-    if(pathname == "/skipper/sklep.php" || pathname == "/skipper/kasy.php"){
-        $('a[href="/skipper/sklep.php"]').parent().addClass('active');
-    }else{
-        $('a[href="/skipper/zeglarstwo.php"]').parent().addClass('active');
-    }
-
-    var $recaptcha = document.querySelector('#g-recaptcha');
-
-    if($recaptcha) {
-        $recaptcha.setAttribute("required", "required");
-    }
-
-    $('#map-load').removeClass('hidden');
-
-    $('#card .back').removeClass('hidden');
-
-    $(".back iframe").attr({
-        'src': ''
-    });
-
-    mapResize();
-
-
-
-
-
-});
-
 $(window).resize(function(){
     mapResize();
 });
+
 var cardClick = false;
 var mapHeight = 0;
 function mapResize(){
-
     if(!cardClick){
         mapHeight = $('#card img').height();
         $('.before-card').css('height',mapHeight+10);
@@ -77,36 +72,27 @@ function mapResize(){
         mapHeight = $('.embed-responsive-item').height();
         $('.before-card').css('height',mapHeight+5);
     }
-
-    console.log(mapHeight);
 }
 
+function doladuj(){
+    var src = "https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20";
+    var width = $(".front img").width() || 640;
+    var height = $(".front img").height() || 360;
 
-$("#card").flip();
-$("#card").on('flip:done',function(){
+    $("iframe").attr({
+        'src': src,
+        'height': height,
+        'width': width,
+        'allowfullscreen':''
+    });
 
-    if(!cardClick){
-        var src = "https://www.google.com/maps/d/embed?ll=49.619997%2C20.697234&spn=0.005144%2C0.01178&output=embed&hl=pl&t=h&msa=0&z=16&ie=UTF8&mid=1BXXAadxShwIur62uwPIPNgs6U20";
-        var width = $(".front img").width() || 640;
-        var height = $(".front img").height() || 360;
-
-        $(".back iframe").attr({
-            'src': src,
-            'height': height,
-            'width': width,
-            'allowfullscreen':''
-        });
-        deteleMap();
-
+    setTimeout(function() {
+        $('.embed-responsive').removeClass('hidden');
         cardClick = true;
         mapResize();
-    }
-});
+        $('#card img').remove();
 
-function deteleMap(){
-    setTimeout(function() {
-        $('#map-load').remove();
-    }, 400);
+    }, 600);
 }
 
 var aktynActive ;
@@ -124,18 +110,6 @@ $("#asprzedaz, #afinanse, #aplace, #aksiega, #asrodki, #acennik").on("click", fu
     });
 
 }).flip();
-
-
-
-$(document).ready(function() {
-    var docHeight = $(window).height();
-    var footerHeight = $('#footer').outerHeight();
-    var footerTop = $('#footer').position().top + footerHeight;
-
-    if (footerTop < docHeight) {
-        $('#footer').css('margin-top',  (docHeight - footerTop) + footerHeight - 2 + 'px');
-    }
-});
 
 $('.panel-title .pull-right, .panel-title a').on('click', function(){
    $(this).find('.pull-right').toggleClass("glyphicon glyphicon-chevron-down glyphicon glyphicon-chevron-up");

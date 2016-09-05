@@ -1,4 +1,3 @@
-
 $(".pic-select").change(function (){
     var regaty = "";
 
@@ -43,16 +42,15 @@ function getRegattaListAd() {
             $('.dodatkowe-opcje').after(html);
         },
         error: function(){
-            console.log("error");
         }
 
     });
 }
 
 var pag = 6;
-var allPosts = true;
+var allPosts = false;
 function getMorePosts(){
-    if(allPosts) {
+    if(!allPosts) {
         var dataString = 'action=getMorePosts&pagi=' + pag;
         $.ajax({
             type: "POST",
@@ -68,18 +66,20 @@ function getMorePosts(){
                     for (var i = 0; i < resultGet.length; i++) {
                         html +=
                             '<div class="col-md-4 col-sm-6"><div class="col-md-12 post-min">' +
-                            '<a href="post.php?id='+resultGet[i].id+'" class="post-title">' + resultGet[i].title + '</a>' +
+                            '<a href="post.php?id='+resultGet[i].id+'" class="post-title">' + (resultGet[i].title.length > 25 ? ((resultGet[i].title).substring(0,26)+'...'): (resultGet[i].title) )+ '</a>' +
                             '<div class="post-date"><span class="glyphicon glyphicon glyphicon-calendar" aria-hidden="true"></span> ' + resultGet[i].date + ' / ' + resultGet[i].who + '</div> ' +
                             '<div><img class="img-responsive" src="' + resultGet[i].image + '" alt="Obraz"></div>' +
-                            '<div>' + (resultGet[i].textmin).substring(0, 400) + '...</div>' +
+                            '<div>' + (resultGet[i].textmin).substring(0, 100) + '...</div>' +
                             '<a class="btn btn-primary read-more" href="post.php?id=' + resultGet[i].id + '">Czytaj więcej <span class="glyphicon glyphicon-chevron-right"></span></a>' +
                             '</div></div>';
                     }
                     $('#posts-load').before(html);
                 } else {
-                    $('#show-more').text("To już wszystko :)");
-                    $('#posts-load').before(html);
-                    allPosts = false;
+                    $('#show-more').text("To już wszystko.");
+                    setTimeout(function(){
+                        $('#show-more').fadeOut('slow');
+                    }, 600);
+                    allPosts = true;
                 }
                 pag = pag + 6;
             },
@@ -91,7 +91,6 @@ function getMorePosts(){
 }
 
 $(function() {
-
     var form = $('#ajax-add');
     var formMessages = $('#form-messages');
     var formType = $(form).attr('data-type');
@@ -108,9 +107,6 @@ $(function() {
             data: formData
         })
             .done(function(response) {
-                $(formMessages).removeClass('error');
-                $(formMessages).addClass('success');
-
                 $(formMessages).text('Zapis zakończony! Automatyczny powrót do panelu admina za 3s.');
 
                 window.setTimeout(function(){
@@ -118,9 +114,6 @@ $(function() {
                 }, 3000);
             })
             .fail(function(data) {
-                $(formMessages).removeClass('success');
-                $(formMessages).addClass('error');
-
                 if (data.responseText !== '') {
                     $(formMessages).text(data.responseText);
                 } else {
@@ -148,7 +141,6 @@ function getPostList() {
             $('#admin-op').append(html);
         },
         error: function(){
-            console.log("error");
         }
 
     });
@@ -172,7 +164,6 @@ function getRegattaList() {
             $('#admin-regaty').append(html);
         },
         error: function(){
-            console.log("error");
         }
 
     });

@@ -4,9 +4,14 @@ session_start();
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+    <title><?php echo $title; ?></title>
+    <meta name="description" content="Sklep komputerowy w Nowym Sączu. Zajmujemy się sprzedażą sprzętu komputerowego, oprogramowania oraz kas i drukarek fiskalnych" />
+    <meta name="keywords" content="sklep, komputery, serwis, kasy, drukarki, fiskalne," />
+    <META name="company" content="SKIPPER">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Aktualności</title>
+
+
 
     <link rel="stylesheet" href="bootstrap336/css/bootstrap.min.css">
 <!--    <link rel="stylesheet" href="css/magnific-popup.css">-->

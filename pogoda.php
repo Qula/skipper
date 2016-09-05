@@ -1,4 +1,6 @@
-<?php include 'header.php'?>
+<?php
+$title = 'SKIPPER.COM.PL - pogoda';
+include 'header.php'?>
 <div class="container">
     <?php include 'nav-sail.php'?>
     <hr>

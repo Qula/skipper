@@ -1,4 +1,5 @@
 <?php
+$title = 'SKIPPER.COM.PL';
 include 'header.php';
 include 'admin-header.php';
 ?>

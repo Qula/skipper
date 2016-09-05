@@ -1,4 +1,6 @@
-<?php include 'header.php' ?>
+<?php
+$title = 'SKIPPER.COM.PL - załoga';
+include 'header.php' ?>
 
 <div class="container">
 

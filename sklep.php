@@ -1,4 +1,6 @@
-<?php include 'header.php' ?>
+<?php
+$title = 'SKIPPER.COM.PL - serwis komputerowy';
+include 'header.php' ?>
 
 <div class="container">
     <div class="row">
@@ -86,14 +88,9 @@
 
         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-10 before-card">
             <div id="card">
-                <div class="front">
-                    <img class="img-responsive" src="pic/mapa.jpg">
-                </div>
-                <div class="back hidden">
-                    <img class="img-responsive hidden" id="map-load" src="pic/load.gif">
-                    <div class="embed-responsive embed-responsive-4by3">
-                        <iframe class="embed-responsive-item" frameborder="0"></iframe>
-                    </div>
+<!--                <img class="img-responsive" src="pic/mapa.jpg">-->
+                <div class="embed-responsive embed-responsive-4by3 hidden">
+                    <iframe class="embed-responsive-item" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
@@ -350,7 +347,7 @@
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12" id="terminale-line">
             <h4>Pozwalają na:</h4>
             <ul class="custom-bullet list-unstyled ">
-                <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż i dystrybucję doładowań do przedpłacanych kont sieci GSM poprzez terminale (wtrybie off-line) oraz Internet</li>
+                <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż i dystrybucję doładowań do przedpłacanych kont sieci GSM poprzez terminale (w trybie off-line) oraz Internet</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Sprzedaż produktów operatorów telekomunikacyjnych VoIP</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Obsługę płatności masowych (rachunki za telefon, wodę, prąd, gaz itp.)</li>
                 <li><i class="glyphicon glyphicon-chevron-right"></i> Obsługę kartowych transakcji płatniczych (VISA, VISA ELECTRON, MasterCard, MasterCard Electronic, Maestro)</li>

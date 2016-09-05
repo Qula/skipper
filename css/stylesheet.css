@@ -39,6 +39,7 @@
     background: none;
     color: rgb(51, 122, 183);
     font-weight: bold;
+    z-index: 9;
 }
 .post-title{
     color: rgb(51, 122, 183);
@@ -294,3 +295,10 @@ tr :first-child {
 .panel {
     border-radius: 0 !important;
 }
+
+.galbut {
+    margin-bottom: 10px;
+    margin-right: 5px;
+    white-space: normal;
+}
+
