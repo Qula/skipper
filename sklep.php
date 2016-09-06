@@ -14,15 +14,15 @@ include 'header.php' ?>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#kasydrukarki">
             <div class="head-desc">
-                <img src="pic/kasydrukarki.jpg" class="img-responsive" alt="">
+                <img src="pic/kasydrukarki.jpg" class="img-responsive" alt="kasy i drukarki fiskalne">
                 <div class="head-name specialkasy">
-                    <p>Kasy i&nbspdrukarki fiskalne</p>
+                    <p>Kasy i&nbsp;drukarki fiskalne</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#serwis">
             <div class="head-desc">
-                <img src="pic/serwis.jpg" class="img-responsive" alt="">
+                <img src="pic/serwis.jpg" class="img-responsive" alt="serwis komputerowy">
                 <div class="head-name">
                     <p>Serwis</p>
                 </div>
@@ -30,7 +30,7 @@ include 'header.php' ?>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 scroll" data-target="#oprogramowanie">
             <div class="head-desc">
-                <img src="pic/oprogramowanie.jpg" class="img-responsive" alt="">
+                <img src="pic/oprogramowanie.jpg" class="img-responsive" alt="oprogramowanie">
                 <div class="head-name">
                     <p>Oprogramowanie</p>
                 </div>
@@ -38,7 +38,7 @@ include 'header.php' ?>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 scroll" data-target="#sprzetkomputerowy">
             <div class="head-desc">
-                <img src="pic/sprzetkomputerowy.jpg" class="img-responsive" alt="">
+                <img src="pic/sprzetkomputerowy.jpg" class="img-responsive" alt="sprzet komputerowy">
                 <div class="head-name special">
                     <p>Sprzęt komputerowy</p>
                 </div>
@@ -46,15 +46,15 @@ include 'header.php' ?>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 scroll" data-target="#oprogramowaniedlafirm">
             <div class="head-desc">
-                <img src="pic/oprogramowaniedlafirm.jpg" class="img-responsive" alt="">
+                <img src="pic/oprogramowaniedlafirm.jpg" class="img-responsive" alt="oprogramowanie dla firm">
                 <div class="head-name special">
-                    <p>Oprogramowanie dla&nbspfirm</p>
+                    <p>Oprogramowanie dla&nbsp;firm</p>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 scroll" data-target="#terminale">
             <div class="head-desc">
-                <img src="pic/terminale.jpg" class="img-responsive" alt="">
+                <img src="pic/terminale.jpg" class="img-responsive" alt="terminale platnicze">
                 <div class="head-name">
                     <p>Terminale płatnicze</p>
                 </div>
@@ -88,9 +88,8 @@ include 'header.php' ?>
 
         <div class="col-lg-5 col-md-5 col-sm-6 col-xs-10 before-card">
             <div id="card">
-<!--                <img class="img-responsive" src="pic/mapa.jpg">-->
                 <div class="embed-responsive embed-responsive-4by3 hidden">
-                    <iframe class="embed-responsive-item" frameborder="0"></iframe>
+                    <iframe class="embed-responsive-item"></iframe>
                 </div>
             </div>
         </div>
@@ -105,13 +104,13 @@ include 'header.php' ?>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center kasy">
             <a href="kasy.php">
                 <span>Kasy fiskalne</span>
-                <img src="pic/kasy_fiskalne.jpg" class="img-responsive center-block kasyimg">
+                <img src="pic/kasy_fiskalne.jpg" class="img-responsive center-block kasyimg" alt="kasy fiskalne">
             </a>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center kasy">
             <a href="#">
                 <span>Drukarki fiskalne</span>
-                <img src="pic/drukarki_fiskalne.jpg" class="img-responsive center-block kasyimg">
+                <img src="pic/drukarki_fiskalne.jpg" class="img-responsive center-block kasyimg" alt="drukarki fiskalne">
             </a>
         </div>
     </div>
@@ -135,7 +134,7 @@ include 'header.php' ?>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                <img src="pic/serwis_info.jpg" class="img-responsive">
+                <img src="pic/serwis_info.jpg" class="img-responsive" alt="serwis komputerowy">
             </div>
         </div>
     </div>
@@ -145,19 +144,19 @@ include 'header.php' ?>
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12" >
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
-                <img src="pic/kaspersky.jpg" class="img-responsive">
+                <img src="pic/kaspersky.jpg" class="img-responsive" alt="kaspersky">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
-                <img src="pic/norton.jpg" class="img-responsive">
+                <img src="pic/norton.jpg" class="img-responsive" alt="norton">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
-                <img src="pic/aktyn.jpg" class="img-responsive">
+                <img src="pic/aktyn.jpg" class="img-responsive" alt="aktyn">
             </div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
-                <img src="pic/windows.jpg" class="img-responsive">
+                <img src="pic/windows.jpg" class="img-responsive" alt="windows">
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                <img src="pic/office.jpg" class="img-responsive">
+                <img src="pic/office.jpg" class="img-responsive" alt="office">
             </div>
         </div>
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
@@ -190,7 +189,7 @@ include 'header.php' ?>
         </div>
         <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
-                <img src="pic/sprzet.jpg" class="img-responsive" id="sp">
+                <img src="pic/sprzet.jpg" class="img-responsive" id="sp" alt="sprzet komputerowy">
             </div>
         </div>
     </div>
@@ -341,7 +340,7 @@ include 'header.php' ?>
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <h4>Oferujemy terminale operatora:</h4>
-            <img src="pic/paytel_logo.jpg" class="img-responsive">
+            <img src="pic/paytel_logo.jpg" class="img-responsive" alt="terminale platnicze">
 
         </div>
         <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12" id="terminale-line">
@@ -360,9 +359,9 @@ include 'header.php' ?>
     <h1 id="kontakt">Kontakt</h1>
     <div class="row">
         <div class="col-lg-6 col-md-8 col-sm-10 col-xs-12">
-            <form id="ajax-contact" class="form-horizontal" role="form" method="post" action="mailer.php">
+            <form id="ajax-contact" class="form-horizontal" method="post" action="mailer.php">
                 <div class="form-group">
-                    <label for="select" class="col-sm-3 control-label">W&nbspsprawie*</label>
+                    <label for="contact" class="col-sm-3 control-label">W&nbsp;sprawie*</label>
                     <div class="col-sm-9">
                         <select class="form-control" name="contact">
                             <option value="aktyn" selected="selected">Aktyna</option>
@@ -397,7 +396,7 @@ include 'header.php' ?>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="captcha" class="col-sm-3 control-label">Zaznacz*</label>
+                    <label class="col-sm-3 control-label">Zaznacz*</label>
                     <div class="col-sm-9 ">
                         <div class="g-recaptcha" data-sitekey="6LfGxBwTAAAAAGTdagt32GKPtufgym1IzgE7UPyu"></div>
                     </div>
@@ -417,10 +416,7 @@ include 'header.php' ?>
         </div>
     </div>
 
-
-
     <hr>
 </div>
-
 
 <?php include 'footer-sklep.php' ?>

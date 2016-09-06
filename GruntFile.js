@@ -12,9 +12,12 @@ module.exports = function(grunt){
             options: {
                 separator: ';'
             },
+            bootstrap: {
+                src: ['bootstrap336/js/jquery-1.12.2.min.js', 'bootstrap336/js/bootstrap.min.js', 'bootstrap336/js/jquery-ui.min.js'],
+                dest: 'js/bootstrap.js'
+            },
             sklep: {
-                src: ['bootstrap336/js/jquery-1.12.2.min.js', 'bootstrap336/js/bootstrap.min.js', 'bootstrap336/js/jquery-ui.min.js',
-                    'js/jquery.scrollTo.min.js', 'js/jquery.flip.min.js', 'js/view.js', 'js/ajax-mail.js' ],
+                src: ['js/jquery.scrollTo.min.js', 'js/jquery.flip.min.js', 'js/view.js', 'js/ajax-mail.js' ],
                 dest: 'js/sklep.js'
             },
             zagle: {
@@ -37,18 +40,23 @@ module.exports = function(grunt){
                 files:{
                     "js/zagle.min.js":"js/zagle.js"
                 }
+            },
+            bootstrap: {
+                files:{
+                    "js/bootstrap.min.js":"js/bootstrap.js"
+                }
             }
         },
         cssmin: {
             target: {
                 files: {
-                    'css/styles.min.css': ['bootstrap336/css/bootstrap.min.css','css/magnific-popup.css', 'css/navbar.css', 'css/stylesheet.css','trumbowyg/trumbowyg.min.css']
+                    'css/styles.min.css': ['css/magnific-popup.css', 'css/navbar.css', 'css/stylesheet.css','trumbowyg/trumbowyg.min.css']
                 }
             }
         }
     });
 
     grunt.registerTask("default", function(){
-        console.log("yo");
+        console.log("hello");
     });
 };

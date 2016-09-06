@@ -8,11 +8,11 @@ $(document).ready(function() {
     }
 
     var docHeight = $(window).height();
-    var footerHeight = $('#footer').outerHeight();
-    var footerTop = $('#footer').position().top + footerHeight;
+    var footerHeight = $('footer').outerHeight();
+    var footerTop = $('footer').position().top + footerHeight;
 
     if (footerTop < docHeight) {
-        $('#footer').css('margin-top',  (docHeight - footerTop) + footerHeight - 2 + 'px');
+        $('footer').css('margin-top',  (docHeight - footerTop) + footerHeight - 2 + 'px');
     }
 
     mapResize();

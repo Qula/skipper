@@ -2,19 +2,11 @@
     margin-top: 20px;
     height: 270px;
     margin-bottom: 50px;
-    /*border-bottom: solid;*/
-    /*border-bottom-color: #0f0f0f;*/
     text-align: justify;
 }
 .post-max{
     text-align: justify;
 }
-/*.post-min >img {*/
-    /*max-height: 50%;*/
-/*}*/
-/*.navbar{*/
-    /*background-color: #428bca;*/
-/*}*/
 .navbar-brand {
     transform: translateX(-50%);
     left: 50%;
@@ -45,9 +37,6 @@
     color: rgb(51, 122, 183);
     font-size: 1.55em;
     margin-top: 20px;
-}
-.post-date{
-    /*color: #33B0B7;*/
 }
 #delete-list li{
     margin-top: 10px;
@@ -96,17 +85,11 @@
     }
 }
 
-.grey {
-    background-color: #F4F4F4;
-}
-
-
 .modal-content {
     box-shadow: none;
     background-color: transparent;
     border: 0;
 }
-
 
 .custom-bullet li
 {
@@ -255,7 +238,7 @@ footer > .navbar {
     .funkcja {
         font-size: 20px;
     }
-.funkcja :first-child {
+    .funkcja :first-child {
         font-size: 30px;
     }
     #sezon {

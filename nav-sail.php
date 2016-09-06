@@ -3,7 +3,7 @@
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
         <a href="zaloga.php">
             <div class="head-desc">
-                <img src="pic/logo_zegl.JPG" class="img-responsive" alt="">
+                <img src="pic/logo_zegl.JPG" class="img-responsive" alt="skipper zagle logo">
                 <div class="head-name specialkasy">
                     <p>Nasza załoga i jacht</p>
                 </div>
@@ -13,7 +13,7 @@
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
         <a href="galeria.php">
             <div class="head-desc">
-                <img src="pic/galeria.jpg" class="img-responsive" alt="">
+                <img src="pic/galeria.jpg" class="img-responsive" alt="galeria">
                 <div class="head-name specialkasy">
                     <p>Galeria zdjęć i filmów</p>
                 </div>
@@ -23,7 +23,7 @@
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
         <a href="sezon.php">
             <div class="head-desc">
-                <img src="pic/sezon2.jpg" class="img-responsive" alt="" id="sezon">
+                <img src="pic/sezon2.jpg" class="img-responsive" alt="sezon" id="sezon">
                 <div class="head-name">
                     <p>SEZON 2016</p>
                 </div>
@@ -33,7 +33,7 @@
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
         <a href="pogoda.php">
             <div class="head-desc">
-                <img src="pic/weather.jpg" class="img-responsive" alt="">
+                <img src="pic/weather.jpg" class="img-responsive" alt="pogoda">
                 <div class="head-name">
                     <p>Pogoda</p>
                 </div>
@@ -43,7 +43,7 @@
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6">
         <a href="zeglarstwo.php">
             <div class="head-desc">
-                <img src="pic/aktualnosci.jpg" class="img-responsive" alt="">
+                <img src="pic/aktualnosci.jpg" class="img-responsive" alt="aktualnosci newsy">
                 <div class="head-name">
                     <p>Aktualności</p>
                 </div>
